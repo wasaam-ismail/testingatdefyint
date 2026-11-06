@@ -122,11 +122,9 @@ section.block{padding:72px 0}
 .box:hover{transform:translateY(-3px)}
 .box .dn{font-family:var(--display);font-stretch:70%;font-weight:900;font-size:clamp(30px,3.4vw,44px);line-height:.9}
 .box .dw{font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-top:3px}
-.box .ribbon{position:absolute;top:0;bottom:0;right:22%;width:9px;background:var(--c);z-index:-1;opacity:.9}
 .box .foot{margin-top:auto;font-size:11.5px;font-weight:700}
 /* past */
 .box[data-state="past"]{background:var(--white);box-shadow:0 0 0 1px var(--line)}
-.box[data-state="past"] .ribbon{opacity:.18}
 .box[data-state="past"] .dn{color:var(--navy)}
 .box[data-state="past"] .dw{color:var(--muted)}
 .box .pk{font-family:var(--display);font-stretch:78%;font-weight:800;font-size:clamp(15px,1.5vw,19px);line-height:1;color:var(--ink);margin-top:auto}
@@ -136,7 +134,6 @@ section.block{padding:72px 0}
 .box[data-state="today"]{background:#fff;color:var(--navy);box-shadow:0 18px 40px -18px rgba(29,55,108,.55)}
 .box[data-state="today"]::before{content:"";position:absolute;inset:-60%;background:var(--glow);animation:spin 6s linear infinite;z-index:-2}
 .box[data-state="today"]::after{content:"";position:absolute;inset:4px;border-radius:calc(var(--r) - 4px);background:#fff;z-index:-1}
-.box[data-state="today"] .ribbon{display:none}
 .box .now{align-self:flex-start;margin-top:8px;order:5;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--hot);color:#fff;padding:3px 7px;border-radius:99px;animation:pulse 1.8s ease-in-out infinite}
 .box .gift{width:40%;margin:auto auto 0;order:4}
 .box[data-state="today"] .pk,.box[data-state="today"] .ps{order:4}
@@ -145,7 +142,6 @@ section.block{padding:72px 0}
 .box[data-state="future"]{background:var(--navy);color:#fff}
 .box[data-state="future"] .dn{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.85)}
 .box[data-state="future"] .dw{color:#A8B6D6}
-.box[data-state="future"] .ribbon{opacity:.55}
 .box[data-state="future"] .lock{width:22px;height:22px;margin-top:auto;opacity:.85}
 .box[data-state="future"] .foot{color:#C8D2EA;margin-top:6px}
 .box.dim{opacity:.22}
@@ -165,13 +161,11 @@ section.block{padding:72px 0}
 /* ---------- resolutions journal ---------- */
 .journal{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .jgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.jrow{display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:center;padding:14px 16px;border-radius:12px;background:var(--paper);border-left:5px solid var(--c)}
+.jrow{display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:center;padding:14px 16px;border-radius:12px;background:var(--paper);border-left:5px solid var(--c)}
 .jrow .d{font-family:var(--display);font-stretch:70%;font-weight:900;font-size:30px;line-height:.9;color:var(--navy)}
 .jrow .d small{display:block;font-family:var(--body);font-size:10.5px;font-weight:800;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-top:4px}
 .jrow q{font-size:16px;font-weight:600;line-height:1.35;quotes:none;display:block}
 .jrow .ja{display:block;font-size:14px;font-weight:500;color:var(--muted);margin-top:4px;line-height:1.4}
-.keep{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;font-size:13px;font-weight:700;white-space:nowrap;display:inline-flex;gap:6px;align-items:center}
-.keep[aria-pressed="true"]{background:var(--lime);border-color:var(--lime);color:#14301A}
 .jempty{color:var(--muted)}
 
 /* ---------- january offers ---------- */
@@ -271,7 +265,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 30px;justify-content:space-bet
   .box .ps,.box .ended{display:none}
   .box .foot{font-size:10px}
   .jrow{grid-template-columns:44px 1fr;}
-  .jrow .keep{grid-column:2;justify-self:start}
   .offers{grid-template-columns:1fr}
   .thought .wrap{grid-template-columns:1fr}
   .thought .mini{width:72px}
@@ -361,9 +354,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 30px;justify-content:space-bet
         <div>
           <div class="eyebrow">Better Resolutions</div>
           <h2>Little promises, so far</h2>
-          <p>Every box comes with a resolution worth keeping long after the discount ends. Tick the ones you're taking with you.</p>
+          <p>Every box comes with a resolution worth keeping long after the discount ends. Small actions, one day at a time.</p>
         </div>
-        <div class="progress" id="keptTxt"></div>
       </div>
       <div class="jgrid" id="journal"></div>
     </div>
@@ -468,7 +460,6 @@ const store = {
   set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
 };
 let opened = new Set(store.get('gbs.opened',[]));
-let kept = new Set(store.get('gbs.kept',[]));
 let device = store.get('gbs.device',null);
 if(!device){device=Math.random().toString(36).slice(2,6).toUpperCase();store.set('gbs.device',device)}
 
@@ -508,7 +499,7 @@ function renderCal(){
     const s = stateOf(o.d), C = colorOf(o.d);
     const dim = '';
     const op = opened.has(o.d) ? ' opened':'';
-    let inner = `<span class="ribbon"></span><span class="dn">${pad(o.d)}</span><span class="dw">${dow(o.d)}</span>`;
+    let inner = `<span class="dn">${pad(o.d)}</span><span class="dw">${dow(o.d)}</span>`;
     let label;
     if(s==='past'){
       inner += `<span class="ended">Ended</span><span class="pk">${esc(o.big)}</span><span class="ps">${esc(o.sub)}</span>`;
@@ -531,16 +522,12 @@ function renderCal(){
 
 function renderJournal(){
   const rows = DAYS.filter(o=>o.d<demo || (o.d===demo && opened.has(o.d)));
-  if(!rows.length){$('#journal').innerHTML='<p class="jempty">Unlock today’s box to collect your first Better Resolution.</p>';$('#keptTxt').textContent='';return}
+  if(!rows.length){$('#journal').innerHTML='<p class="jempty">Unlock today’s box to collect your first Better Resolution.</p>';return}
   $('#journal').innerHTML = rows.slice().reverse().map(o=>{
-    const k = kept.has(o.d);
     return `<div class="jrow" style="--c:${colorOf(o.d)}">
       <div class="d">${pad(o.d)}<small>${dow(o.d)}</small></div>
       <div><q>${esc(o.res)}</q><span class="ja">${esc(o.act)}</span></div>
-      <button class="keep" type="button" data-keep="${o.d}" aria-pressed="${k}">${k?'✓ Keeping it':'+ I’ll keep this'}</button>
     </div>`}).join('');
-  const kc = rows.filter(o=>kept.has(o.d)).length;
-  $('#keptTxt').innerHTML = `<div class="bar"><i style="width:${kc/rows.length*100}%"></i></div><span>${kc} of ${rows.length} kept</span>`;
 }
 
 function renderOffers(){
@@ -611,8 +598,7 @@ function openModal(d){
         </div>`:`
         <div class="endedbox">This offer ended on <b>${longDate(d)}</b>. The resolution is yours to keep. Today's box is <b>Day ${demo}</b>.</div>`}
         <div class="mact">
-          ${s==='today'?`<button class="btn line" type="button" data-close>Done</button>`:`<button class="btn navy" type="button" data-open="${demo}">Go to today's box</button>`}
-          <button class="btn ${s==='today'?'navy':'line'}" type="button" data-keep="${d}" aria-pressed="${kept.has(d)}">${kept.has(d)?'✓ Keeping it':'I’ll keep this'}</button>
+          ${s==='today'?`<button class="btn navy" type="button" data-close>Done</button>`:`<button class="btn navy" type="button" data-open="${demo}">Go to today's box</button>`}
         </div>
       </div>
     </div>`;
@@ -667,18 +653,9 @@ function confetti(){
 
 /* ---------- events ---------- */
 document.addEventListener('click',e=>{
-  const el=e.target.closest('[data-open],[data-day],[data-close],[data-keep]');
+  const el=e.target.closest('[data-open],[data-day],[data-close]');
   if(!el)return;
   if(el.dataset.close!==undefined){closeModal();return}
-  if(el.dataset.keep){
-    const d=+el.dataset.keep;
-    kept.has(d)?kept.delete(d):kept.add(d);store.set('gbs.kept',[...kept]);
-    const on=kept.has(d);
-    if(el.closest('.modal')){el.setAttribute('aria-pressed',on);el.textContent=on?'✓ Keeping it':'I’ll keep this'}
-    renderJournal();
-    if(on)toast('Added to your Better Resolutions.');
-    return;
-  }
   if(el.dataset.open){if($('#scrim').classList.contains('on'))closeModal();openModal(+el.dataset.open);return}
   if(el.dataset.day){openModal(+el.dataset.day)}
 });
