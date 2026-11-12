@@ -5,11 +5,11 @@
   <script>window.SITE_ROOT="../";</script>
   <script>var p=location.pathname;if(location.protocol!=='file:'&&p.slice(-1)!=='/'&&p.split('/').pop().indexOf('.')<0)location.replace(p+'/'+location.search+location.hash);</script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Online Offers | Sampath Bank Card Offers</title>
+  <title>Online offers | Sampath Bank Card Offers</title>
   <meta name="description" content="Sampath Bank credit and debit card offers on online in Sri Lanka, with live countdowns, maps and calendar reminders.">
   <meta name="application-name" content="Sampath Card Offers">
   <meta name="author" content="Sampath Bank PLC">
-  <meta name="theme-color" content="#DB651A">
+  <meta name="theme-color" content="#F47920">
   <meta name="format-detection" content="telephone=no">
 
   <!-- SEARCH ENGINES
@@ -33,7 +33,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Sampath Bank">
   <meta property="og:locale" content="en_LK">
-  <meta property="og:title" content="Online Offers | Sampath Bank Card Offers">
+  <meta property="og:title" content="Online offers | Sampath Bank Card Offers">
   <meta property="og:description" content="14 Sampath card offers on online, live, with countdowns, maps and calendar reminders.">
   <meta property="og:url" content="https://www.testingatdefyint.site/sampath/online/">
   <meta property="og:image" content="https://www.testingatdefyint.site/sampath/assets/categories/Online.jpg">
@@ -42,7 +42,7 @@
   <meta property="og:image:height" content="503">
   <meta property="og:image:alt" content="Online: Sampath Bank card offers">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Online Offers | Sampath Bank Card Offers">
+  <meta name="twitter:title" content="Online offers | Sampath Bank Card Offers">
   <meta name="twitter:description" content="14 Sampath card offers on online, live, with countdowns, maps and calendar reminders.">
   <meta name="twitter:image" content="https://www.testingatdefyint.site/sampath/assets/categories/Online.jpg">
   <meta name="twitter:image:alt" content="Online: Sampath Bank card offers">
@@ -80,7 +80,7 @@
         "@type": "CollectionPage",
         "@id": "https://www.testingatdefyint.site/sampath/online/#page",
         "url": "https://www.testingatdefyint.site/sampath/online/",
-        "name": "Online Offers | Sampath Bank Card Offers",
+        "name": "Online offers | Sampath Bank Card Offers",
         "description": "Sampath Bank credit and debit card offers on online in Sri Lanka, with live countdowns, maps and calendar reminders.",
         "isPartOf": {
           "@id": "https://www.testingatdefyint.site/sampath/#website"
@@ -119,8 +119,9 @@
 
   <!-- Montserrat (free, self-hosted in assets/fonts). If Sampath supplies its own
        brand web fonts, see README. -->
-  <link rel="stylesheet" href="../assets/fonts/fonts.css?v=20261103">
-  <link rel="stylesheet" href="../assets/css/styles.css?v=20261103">
+  <link rel="stylesheet" href="../assets/fonts/fonts.css?v=20261112">
+  <link rel="preload" as="image" type="image/webp" imagesrcset="../assets/img/hero-family-720.webp 720w, ../assets/img/hero-family-1100.webp 1100w" imagesizes="(max-width: 760px) 92vw, 620px">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20261112">
 </head>
 <body>
   <a class="skip" href="#offers">Skip to offers</a>
@@ -149,13 +150,21 @@
         <p class="hero__eyebrow">Sampath card offers</p>
         <h1 class="hero__title" id="heroTitle">Online offers</h1>
         <p class="hero__lede">Every Sampath card offer on online, live by the second.</p>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <picture>
+          <source type="image/webp" srcset="../assets/img/hero-family-720.webp 720w, ../assets/img/hero-family-1100.webp 1100w" sizes="(max-width: 760px) 92vw, 620px">
+          <img src="../assets/img/hero-family-720.png" alt="" width="1100" height="766" fetchpriority="high" decoding="async">
+        </picture>
+      </div>
+      <div class="hero__meta">
         <ul class="stats" aria-label="Offer summary">
           <li><b id="statLive">0</b><span>Live now</span></li>
           <li><b id="statSoon">0</b><span>This week</span></li>
           <li><b id="statLater">0</b><span>Coming up</span></li>
         </ul>
+        <div class="feature" id="feature" aria-live="off"></div>
       </div>
-      <div class="feature" id="feature" aria-live="off"></div>
     </div>
   </section>
 
@@ -186,6 +195,10 @@
       <div class="fpanel__box" role="dialog" aria-label="Filter offers">
         <div class="wrap">
           <div class="fpanel__grab" aria-hidden="true"></div>
+          <div class="fpanel__head">
+            <p class="fpanel__title">Filter offers <span id="filterCount"></span></p>
+            <button class="fpanel__x" id="filterClose" aria-label="Close filters"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          </div>
           <div id="filterBody"></div>
           <div class="fpanel__foot">
             <button class="linkbtn" data-clear>Clear all</button>
@@ -305,11 +318,11 @@
   <div class="drop" id="dropOverlay" hidden><p>Drop your offers Excel to preview it</p></div>
 
   <!-- Scripts: settings first, then the Excel reader, the engine and the page -->
-  <script src="../settings.js?v=20261103"></script>
-  <script src="../pages.js?v=20261103"></script>
-  <script src="../assets/js/analytics.js?v=20261103"></script>
-  <script src="../assets/js/vendor/xlsx.mini.min.js?v=20261103"></script>
-  <script src="../assets/js/offer-engine.js?v=20261103"></script>
-  <script src="../assets/js/app.js?v=20261103"></script>
+  <script src="../settings.js?v=20261112"></script>
+  <script src="../pages.js?v=20261112"></script>
+  <script src="../assets/js/analytics.js?v=20261112"></script>
+  <script src="../assets/js/vendor/xlsx.mini.min.js?v=20261112"></script>
+  <script src="../assets/js/offer-engine.js?v=20261112"></script>
+  <script src="../assets/js/app.js?v=20261112"></script>
 </body>
 </html>

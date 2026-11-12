@@ -18,6 +18,23 @@ window.SITE_PAGES = {
   "0% Instalment Plans": "instalment-plans",
   "Extended Settlement Plans": "extended-settlement-plans"
  },
+ "labels": {
+  "Fashion & Retail": "Fashion & Retail offers",
+  "Gifts, Wellness & Watches": "Gift, wellness & watch offers",
+  "Footwear": "Footwear offers",
+  "Online": "Online offers",
+  "Eyewear & Hearing": "Eyewear & Hearing offers",
+  "Baby & Kids": "Baby & Kids offers",
+  "Home Care": "Home Care offers",
+  "Auto Care": "Auto Care offers",
+  "Travel & Leisure": "Travel & Leisure offers",
+  "Sports": "Sports offers",
+  "Supermarkets": "Supermarket offers",
+  "Jewellery": "Jewellery offers",
+  "Dining": "Dining offers",
+  "0% Instalment Plans": "0% instalment plans",
+  "Extended Settlement Plans": "Extended settlement plans"
+ },
  "merchants": {
   "House Of Fashions": "house-of-fashions",
   "Glory Swim shop": "glory-swim-shop",

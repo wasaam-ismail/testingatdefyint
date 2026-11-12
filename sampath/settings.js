@@ -61,26 +61,26 @@ window.SETTINGS = {
   LOGO_FILES: {
     // 0% Instalment Plans
     "Abans": "abans.png",
-    "Arpico Furniture": "",   // no logo yet: initials shown
+    "Arpico Furniture": "arpico-furniture.png",
     "BuyAbans": "buyabans.png",
-    "Ceylon Furniture": "",   // no logo yet: initials shown
+    "Ceylon Furniture": "ceylon-furniture.png",
     "Damro": "damro.png",
     "Dinapala": "dinapala.png",
-    "ESER International": "",   // no logo yet: initials shown
-    "ESER Marketing Fitness": "",   // no logo yet: initials shown
-    "GNEXT Store": "",   // no logo yet: initials shown
-    "Hayleys Fentons": "",   // no logo yet: initials shown
+    "ESER International": "eser-international.png",
+    "ESER Marketing Fitness": "eser-marketing-fitness.png",
+    "GNEXT Store": "gnext-store.png",
+    "Hayleys Fentons": "hayleys-fentons.png",
     "Nisaco": "",   // no logo yet: initials shown
     "Palliyaguruge Jewellers": "",   // no logo yet: initials shown
     "Quantum Fitness": "",   // no logo yet: initials shown
     "Raja Jewellers": "raja-jewellers.png",
-    "Rocell": "",   // no logo yet: initials shown
-    "Seetha Holdings": "",   // no logo yet: initials shown
+    "Rocell": "rocell.png",
+    "Seetha Holdings": "seetha-holdings.png",
     "Singer": "singer.png",
     "Singer Mega": "singer-mega.png",
     "Singer.lk": "singer-lk.png",
     "Singhagiri": "singhagiri.png",
-    "Vision Care": "",   // no logo yet: initials shown
+    "Vision Care": "vision-care.png",
 
     // Auto Care
     "Driveline": "driveline.png",
@@ -91,7 +91,7 @@ window.SETTINGS = {
     // Baby & Kids
     "Cool Kidz": "cool-kidz.png",
     "Mikigans": "",   // no logo yet: initials shown
-    "Nesh Kids": "",   // no logo yet: initials shown
+    "Nesh Kids": "nesh-kids.png",
     "Super Kids": "",   // no logo yet: initials shown
     "The Kids Warehouse": "",   // no logo yet: initials shown
     "Velona": "velona.png",
@@ -99,10 +99,10 @@ window.SETTINGS = {
     // Dining
     "&Co Pub": "",   // no logo yet: initials shown
     "Adikted": "",   // no logo yet: initials shown
-    "All Star Sports Lounge": "",   // no logo yet: initials shown
-    "Bamboo Boy": "",   // no logo yet: initials shown
+    "All Star Sports Lounge": "all-star-sports-lounge.png",
+    "Bamboo Boy": "bamboo-boy.png",
     "Baskin Robbins": "baskin-robbins.png",
-    "Blooming Breakfast": "",   // no logo yet: initials shown
+    "Blooming Breakfast": "blooming-breakfast.png",
     "Blue Orbit": "",   // no logo yet: initials shown
     "Blue Water": "",   // no logo yet: initials shown
     "Burger King": "burger-king.png",
@@ -112,17 +112,17 @@ window.SETTINGS = {
     "Ceylon Curry Club": "",   // no logo yet: initials shown
     "Ceylon King": "",   // no logo yet: initials shown
     "Chambers": "",   // no logo yet: initials shown
-    "Chinese Dragon": "",   // no logo yet: initials shown
-    "Clerk 2 CEO": "",   // no logo yet: initials shown
+    "Chinese Dragon": "chinese-dragon.png",
+    "Clerk 2 CEO": "clerk-2-ceo.png",
     "Crystal Jade": "crystal-jade.png",
     "Delifrance": "",   // no logo yet: initials shown
-    "Delizo": "",   // no logo yet: initials shown
+    "Delizo": "delizo.png",
     "Dilmah": "",   // no logo yet: initials shown
     "Diners Lounge": "",   // no logo yet: initials shown
-    "Emperor's Den": "",   // no logo yet: initials shown
-    "Galle Face Hotel": "",   // no logo yet: initials shown
+    "Emperor's Den": "emperors-den.png",
+    "Galle Face Hotel": "galle-face-hotel.png",
     "Great Wall": "",   // no logo yet: initials shown
-    "Harpos Pizza": "",   // no logo yet: initials shown
+    "Harpos Pizza": "harpos-pizza.png",
     "Hello Beirut": "",   // no logo yet: initials shown
     "Hotel Manoli": "",   // no logo yet: initials shown
     "Jade Restaurants": "",   // no logo yet: initials shown
@@ -131,25 +131,25 @@ window.SETTINGS = {
     "Kottu Lounge": "",   // no logo yet: initials shown
     "Lebanan Chef": "",   // no logo yet: initials shown
     "Maalu by Fresh Harvest": "",   // no logo yet: initials shown
-    "Maniumpathy Hotel": "",   // no logo yet: initials shown
-    "MaRadha Colombo": "",   // no logo yet: initials shown
-    "Nagoya Japanese": "",   // no logo yet: initials shown
-    "Navro Seafood": "",   // no logo yet: initials shown
+    "Maniumpathy Hotel": "maniumpathy-hotel.png",
+    "MaRadha Colombo": "maradha-colombo.png",
+    "Nagoya Japanese": "nagoya-japanese.png",
+    "Navro Seafood": "navro-seafood.png",
     "One Ocean": "",   // no logo yet: initials shown
-    "Popeyes": "",   // no logo yet: initials shown
+    "Popeyes": "popeyes.png",
     "Primo": "",   // no logo yet: initials shown
-    "Pullman Colombo": "",   // no logo yet: initials shown
+    "Pullman Colombo": "pullman-colombo.png",
     "Radisson": "",   // no logo yet: initials shown
-    "Ramada": "",   // no logo yet: initials shown
+    "Ramada": "ramada.png",
     "Red Orchids": "",   // no logo yet: initials shown
     "Siam House": "",   // no logo yet: initials shown
     "Steak House": "",   // no logo yet: initials shown
-    "Street Burger": "",   // no logo yet: initials shown
+    "Street Burger": "street-burger.png",
     "Subway": "subway.png",
-    "Thai Shack": "",   // no logo yet: initials shown
-    "Via Torino": "",   // no logo yet: initials shown
+    "Thai Shack": "thai-shack.png",
+    "Via Torino": "via-torino.png",
     "Wide Eyes": "",   // no logo yet: initials shown
-    "Yamato Japanese": "",   // no logo yet: initials shown
+    "Yamato Japanese": "yamato-japanese.png",
 
     // Extended Settlement Plans
     "Education institutes": "",   // no logo yet: initials shown
@@ -164,31 +164,31 @@ window.SETTINGS = {
     "Lens Expert by George Gooneratne": "lens-expert-by-george-gooneratne.png",
 
     // Fashion & Retail
-    "ADDRESS": "",   // no logo yet: initials shown
+    "ADDRESS": "address.png",
     "Adidas": "adidas.png",
     "Aditi Infinity": "aditi-infinity.png",
     "Ama Dress Point": "ama-dress-point.png",
     "Amanka": "amanka.png",
-    "Amante": "",   // no logo yet: initials shown
-    "Arielle": "",   // no logo yet: initials shown
-    "Arienti": "",   // no logo yet: initials shown
+    "Amante": "amante.png",
+    "Arielle": "arielle.png",
+    "Arienti": "arienti.png",
     "Armani Exchange": "armani-exchange.png",
     "Arrow": "arrow.png",
-    "ASB": "",   // no logo yet: initials shown
+    "ASB": "asb.png",
     "Asics": "asics.png",
     "Athukorala Textiles": "athukorala-textiles.png",
     "AVI": "avi.png",
-    "Bayleee": "",   // no logo yet: initials shown
+    "Bayleee": "bayleee.png",
     "Be One": "be-one.png",
     "Bella Boutique": "bella-boutique.png",
     "Botex": "botex.png",
-    "Calista Clothing": "",   // no logo yet: initials shown
+    "Calista Clothing": "calista-clothing.png",
     "Calvin Klein": "calvin-klein.png",
-    "Ceylon City Mart": "",   // no logo yet: initials shown
+    "Ceylon City Mart": "ceylon-city-mart.png",
     "Charles & Keith": "charles-and-keith.png",
-    "Chenara Dodge": "",   // no logo yet: initials shown
-    "CIB": "",   // no logo yet: initials shown
-    "CIB Curtain": "",   // no logo yet: initials shown
+    "Chenara Dodge": "chenara-dodge.png",
+    "CIB": "cib.png",
+    "CIB Curtain": "cib-curtain.png",
     "COCO": "coco.png",
     "Colombo Outlet": "colombo-outlet.png",
     "Comfort Outlet": "comforton.png",
@@ -199,36 +199,36 @@ window.SETTINGS = {
     "DBLAQ": "dblaq.png",
     "Deedat": "deedat.png",
     "Denim World": "denim-world.png",
-    "Diliganz": "",   // no logo yet: initials shown
-    "Dilly & Carlo": "",   // no logo yet: initials shown
-    "Dirali": "",   // no logo yet: initials shown
-    "Domingo's": "",   // no logo yet: initials shown
+    "Diliganz": "diliganz.png",
+    "Dilly & Carlo": "dilly-and-carlo.png",
+    "Dirali": "dirali.png",
+    "Domingo's": "domingos.png",
     "Double XL": "double-xl.png",
     "Dulansa": "",   // no logo yet: initials shown
     "EKKO": "ekko.png",
     "Emerald": "emerald.png",
     "Enuli Fashion": "enuli-fashion.png",
     "Envoy Mansion": "",   // no logo yet: initials shown
-    "Fashion Bug": "",   // no logo yet: initials shown
+    "Fashion Bug": "fashion-bug.png",
     "Galis Lingerie": "galis-lingerie.png",
     "Gayan Inlook": "gayan-inlook.png",
-    "GFLOCK": "",   // no logo yet: initials shown
-    "Gift by NOLIMIT": "",   // no logo yet: initials shown
+    "GFLOCK": "gflock.png",
+    "Gift by NOLIMIT": "gift-by-nolimit.png",
     "Giordano": "giordano.png",
-    "Glory Swim shop": "",   // no logo yet: initials shown
+    "Glory Swim shop": "glory-swim-shop.png",
     "H Sports": "",   // no logo yet: initials shown
-    "Hameedia": "",   // no logo yet: initials shown
-    "Handloom Gallery": "",   // no logo yet: initials shown
+    "Hameedia": "hameedia.png",
+    "Handloom Gallery": "handloom-gallery.png",
     "Happy World Fashion": "happy-world-fashion.png",
-    "House Of Fashions": "",   // no logo yet: initials shown
+    "House Of Fashions": "house-of-fashions.png",
     "House of Tailors": "",   // no logo yet: initials shown
     "Infinity": "infinity.png",
-    "Jezza Fashion": "",   // no logo yet: initials shown
+    "Jezza Fashion": "jezza-fashion.png",
     "Jia Moda": "jia-moda.png",
-    "Joey Clothing": "",   // no logo yet: initials shown
-    "JUMP": "",   // no logo yet: initials shown
+    "Joey Clothing": "joey-clothing.png",
+    "JUMP": "jump.png",
     "Junior Warehouse": "",   // no logo yet: initials shown
-    "Kadapatha": "",   // no logo yet: initials shown
+    "Kadapatha": "kadapatha.png",
     "Kandygs Handlooms": "kandygs-handlooms.png",
     "Kathyusha Store": "kathyusha-store.png",
     "Kelly Felder": "kelly-felder.png",
@@ -237,20 +237,20 @@ window.SETTINGS = {
     "Kreation House of Cotton": "kreation-house-of-cotton.png",
     "La Vivente": "la-vivente.png",
     "Leads": "leads.png",
-    "Leather Collection": "",   // no logo yet: initials shown
+    "Leather Collection": "leather-collection.png",
     "Level Outfitters": "level-outfitters.png",
     "Levi’s": "levis.png",
     "LIBERA": "libera.png",
     "Lida Fashion": "lida-fashion.png",
     "Live & Kicking": "live-and-kicking.png",
     "Luv SL": "luv-sl.png",
-    "Mags": "",   // no logo yet: initials shown
+    "Mags": "mags.png",
     "MAM Fashion": "mam-fashion.png",
     "Mango": "mango.png",
     "Mathara Traders": "",   // no logo yet: initials shown
     "Midnightdivas": "midnightdivas.png",
     "Miika": "miika.png",
-    "Mimosa": "",   // no logo yet: initials shown
+    "Mimosa": "mimosa.png",
     "Molly Fashion Circle": "molly-fashion-circle.png",
     "MONDY": "mondy.png",
     "Moonstone": "moonstone.png",
@@ -260,11 +260,11 @@ window.SETTINGS = {
     "Nick Nack": "nick-nack.png",
     "Nils": "nils.png",
     "Nithijaya Sarees & Clothing": "",   // no logo yet: initials shown
-    "NOLIMIT": "",   // no logo yet: initials shown
+    "NOLIMIT": "nolimit.png",
     "ODEL": "odel.png",
     "ODEL Brands Outlet Store": "odel-brands-outlet-store.png",
     "ODEL Sports": "odel-sports.png",
-    "Outfit": "",   // no logo yet: initials shown
+    "Outfit": "outfit.png",
     "Pippin": "pippin.png",
     "Piyarathna Tex": "",   // no logo yet: initials shown
     "Puma": "puma.png",
@@ -279,11 +279,11 @@ window.SETTINGS = {
     "Saree Mandir": "",   // no logo yet: initials shown
     "Scylla Zelus": "scylla-zelus.png",
     "Shopimo": "",   // no logo yet: initials shown
-    "Signature": "",   // no logo yet: initials shown
+    "Signature": "signature.png",
     "Sirasa Garments": "",   // no logo yet: initials shown
     "Sona Mandhir": "sona-mandhir.png",
-    "Spring & Summer": "",   // no logo yet: initials shown
-    "Sriyani Dress Point": "",   // no logo yet: initials shown
+    "Spring & Summer": "spring-and-summer.png",
+    "Sriyani Dress Point": "sriyani-dress-point.png",
     "Sting": "sting.png",
     "STREET82": "street82.png",
     "SWX": "swx.png",
@@ -291,9 +291,9 @@ window.SETTINGS = {
     "The Bella Clothing Gallery": "the-bella-clothing-gallery.png",
     "The Brands Warehouse": "",   // no logo yet: initials shown
     "The Cult Original": "the-cult-original.png",
-    "The Factory Outlet": "",   // no logo yet: initials shown
+    "The Factory Outlet": "the-factory-outlet.png",
     "The Vanta Studios": "",   // no logo yet: initials shown
-    "Thilakma City": "",   // no logo yet: initials shown
+    "Thilakma City": "thilakma-city.png",
     "Thirteen Thirtyone": "thirteen-thirtyone.png",
     "Timy": "timy.png",
     "Tiyana Big City": "",   // no logo yet: initials shown
@@ -301,15 +301,15 @@ window.SETTINGS = {
     "TKS Fashion": "tks-fashion.png",
     "TOFO": "",   // no logo yet: initials shown
     "Tommy Hilfiger": "tommy-hilfiger.png",
-    "Tropic Of Linen": "",   // no logo yet: initials shown
+    "Tropic Of Linen": "tropic-of-linen.png",
     "US Polo Assn.": "us-polo-assn.png",
     "Waves": "waves.png",
-    "Wijaya Saree Mandir": "",   // no logo yet: initials shown
+    "Wijaya Saree Mandir": "wijaya-saree-mandir.png",
     "Winmart": "winmart.png",
     "Yaliz": "yaliz.png",
-    "Yarn & Darn": "",   // no logo yet: initials shown
+    "Yarn & Darn": "yarn-and-darn.png",
     "ZIE Fashion": "zie-fashion.png",
-    "ZigZag": "",   // no logo yet: initials shown
+    "ZigZag": "zigzag.png",
 
     // Footwear
     "Birkenstock": "birkenstock.png",
@@ -329,8 +329,8 @@ window.SETTINGS = {
     // Home Care
     "Aquafresh": "aquafresh.png",
     "Celcius": "celcius.png",
-    "Centrepoint Homes": "",   // no logo yet: initials shown
-    "Comfort World": "",   // no logo yet: initials shown
+    "Centrepoint Homes": "centrepoint-homes.png",
+    "Comfort World": "comfort-world.png",
     "Dankotuwa Porcelain": "",   // no logo yet: initials shown
     "Dilshan Drapers": "",   // no logo yet: initials shown
     "Elegant Charms": "elegant-charms.png",
@@ -349,22 +349,22 @@ window.SETTINGS = {
     "Premadasa & Co Jewellery": "",   // no logo yet: initials shown
     "Pure Gold by Tiesh": "",   // no logo yet: initials shown
     "Raddella Jewellers": "raddella-jewellers.png",
-    "Vogue Jewellers": "",   // no logo yet: initials shown
+    "Vogue Jewellers": "vogue-jewellers.png",
 
     // Online
     "Atlas": "atlas.png",
     "Cargills Online": "cargills-online.png",
     "DSI / Footcandy": "dsi-footcandy.png",
-    "Galleria Milano": "",   // no logo yet: initials shown
-    "Harriet": "",   // no logo yet: initials shown
+    "Galleria Milano": "galleria-milano.png",
+    "Harriet": "harriet.png",
     "Hemas eStore": "hemas-estore.png",
     "KA Sports": "ka-sports.png",
-    "Lassana Flora": "",   // no logo yet: initials shown
-    "Mabroc Teas": "",   // no logo yet: initials shown
-    "Mintpay": "",   // no logo yet: initials shown
-    "Nesh": "",   // no logo yet: initials shown
-    "Ting": "",   // no logo yet: initials shown
-    "Tudo": "",   // no logo yet: initials shown
+    "Lassana Flora": "lassana-flora.png",
+    "Mabroc Teas": "mabroc-teas.png",
+    "Mintpay": "mintpay.png",
+    "Nesh": "nesh.png",
+    "Ting": "ting.png",
+    "Tudo": "tudo.png",
     "Wishque": "",   // no logo yet: initials shown
 
     // Sports
@@ -379,7 +379,7 @@ window.SETTINGS = {
 
     // Travel & Leisure
     "Crazy Jets": "",   // no logo yet: initials shown
-    "Dufry Duty Free": "",   // no logo yet: initials shown
+    "Dufry Duty Free": "dufry-duty-free.png",
     "FindMyFare": "findmyfare.png",
     "Pearl Bay": "",   // no logo yet: initials shown
   },

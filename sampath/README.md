@@ -164,7 +164,7 @@ That's the only change needed to go live.
 
 ## Hero
 
-The orange hero band has no campaign image: it shows the headline, the live counts and the offer ending soonest. To change the wording, edit the `hero__eyebrow`, `hero__title` and `hero__lede` lines in `index.html`.
+The orange hero band shows the headline, the live counts, the offer ending soonest and the family photo (`assets/img/hero-family-*.webp`, with a PNG fallback). To change the photo, replace those files with a cut-out image (transparent background) of the same names. To change the wording, edit the `hero__eyebrow`, `hero__title` and `hero__lede` lines in `index.html`.
 
 ## Add to calendar
 
@@ -276,7 +276,7 @@ What's sent (every event carries `offer_category`, and offer events also carry `
 
 ## Brand notes
 
-- Colours are taken from the Sampath Bank logo: orange `#F07D22`, a deeper orange `#B9510F` wherever white text sits on orange (so it stays readable), and charcoal `#262626`. They're all at the top of `assets/css/styles.css`, so a developer can match Sampath's official brand values in a minute.
+- **Colours:** Sampath Bank brand orange `#F47920` (hero band, highlights, icons), a deeper orange `#B75B18` for buttons and small orange text so they stay readable (WCAG AA), and charcoal `#262626`. They're all at the top of `assets/css/styles.css`.
 - **Logo:** `assets/img/sampath-logo.png` was made from the small preview inside the supplied Illustrator file (the file itself arrived damaged), so it's a little soft on high-resolution screens. Replace it with a clean PNG or SVG at the same file name before presenting. `favicon.png` and `sampath-emblem.png` come from the same source.
 - The site uses **Montserrat**, a free font built into `assets/fonts/fonts.css`. If Sampath supplies its own brand web fonts, a developer can swap them in there.
 - The "0% Easy Payment Plans" photo has been edited so the card shows Sampath orange instead of another bank's card.

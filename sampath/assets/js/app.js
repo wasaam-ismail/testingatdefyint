@@ -24,8 +24,8 @@
   Object.keys(PAGES.categories).forEach(function (c) { CAT_BY_SLUG[PAGES.categories[c]] = c; });
   Object.keys(PAGES.merchants).forEach(function (m) { MERCH_BY_SLUG[PAGES.merchants[m]] = m; });
   var HOME = {
-    title: "Sampath Bank Card Offers | Credit & Debit Card Deals in Sri Lanka",
-    desc: "Every Sampath Bank credit and debit card offer in one place: dining, fashion, supermarkets, jewellery, travel, online and 0% instalment plans, with live countdowns, maps and calendar reminders.",
+    title: "Sampath Card Offers | Credit & Debit Card Deals in Sri Lanka",
+    desc: "Every Sampath Bank credit and debit card offer in one place, from dining and fashion to travel and 0% instalment plans, with live countdowns and maps.",
     eyebrow: "Sampath card offers", h1: "Never miss an offer",
     lede: "Every Sampath card offer, live by the second. See what's on today, what starts tomorrow and what's coming next.",
   };
@@ -44,11 +44,15 @@
   var CAN_ROUTE = /^https?:$/.test(location.protocol) && !!(history && history.pushState);
   // The address changes without reloading, so fix every relative link and file path now,
   // while they still point where they should (icons, logo, category links, etc.)
-  if (CAN_ROUTE) $$("[href],[src]").forEach(function (el) {
+  if (CAN_ROUTE) $$("[href],[src],[srcset]").forEach(function (el) {
     ["href", "src"].forEach(function (k) {
       var v = el.getAttribute(k);
       if (v && !/^(?:[a-z]+:|#|\/)/i.test(v)) el.setAttribute(k, new URL(v, location.href).href);
     });
+    var ss = el.getAttribute("srcset");
+    if (ss) el.setAttribute("srcset", ss.split(",").map(function (part) {
+      var bits = part.trim().split(/\s+/); bits[0] = new URL(bits[0], location.href).href; return bits.join(" ");
+    }).join(", "));
   });
   function goTo(rel, replace, st) {
     if (!CAN_ROUTE || rel === null) return false;
@@ -59,15 +63,26 @@
   }
   function setMeta(sel, attr, val) { var el = document.querySelector(sel); if (el) el.setAttribute(attr, val); }
   // page title, description, canonical address and hero heading for a list page (home or category)
+  function catLabel(cat) { return (PAGES.labels && PAGES.labels[cat]) || cat + " offers"; }
+  function shortDeal(d) {
+    return d.replace(/^Up to \d+ months 0% instalment plans?$/i, "0% instalment plans").replace(/^\d+ months 0% extended settlement plans?$/i, "0% settlement plan");
+  }
+  function offerTitle(o) {
+    var d = shortDeal(dealText(o));
+    var core = o.category === "Extended Settlement Plans" ? o.merchant + ": " + d : d + " at " + o.merchant;
+    var t = core + " | Sampath Card Offers";
+    return t.length <= 60 ? t : core + " | Sampath Offers";
+  }
   function applyListMeta(cat) {
-    var t = cat ? cat + " Offers | Sampath Bank Card Offers" : HOME.title;
+    var t = HOME.title;
+    if (cat) { t = catLabel(cat) + " | Sampath Bank Card Offers"; if (t.length > 60) t = catLabel(cat) + " | Sampath Card Offers"; }
     var d = cat ? "Sampath Bank credit and debit card offers on " + cat.toLowerCase() + " in Sri Lanka, with live countdowns, maps and calendar reminders." : HOME.desc;
     document.title = t; baseTitle = t;
     setMeta('meta[name="description"]', "content", d);
     var rel = cat ? catPath(cat) : "";
     if (rel !== null) { setMeta('link[rel="canonical"]', "href", pageUrl(rel)); setMeta('meta[property="og:url"]', "content", pageUrl(rel)); }
     var h = $("#heroTitle"), eb = $(".hero__eyebrow"), le = $(".hero__lede");
-    if (h) h.textContent = cat ? cat + " offers" : HOME.h1;
+    if (h) h.textContent = cat ? catLabel(cat) : HOME.h1;
     if (eb) eb.textContent = HOME.eyebrow;
     if (le) le.textContent = cat ? "Every Sampath card offer on " + cat.toLowerCase() + ", live by the second." : HOME.lede;
   }
@@ -513,14 +528,14 @@
         if (items.length > limit) html += '<button class="btn btn--more" data-more>Show all ' + items.length + " upcoming offers</button>";
       } else html += '<div class="grid' + (sec.key === "today" ? " grid--today" : "") + '">' + items.map(cardHTML).join("") + "</div>";
       html += "</section>";
-      if (sec.key === "nextweek" && !filtered) html += categoriesHTML(views);
     });
     if (filtered && total === 0) {
       html = '<div class="empty empty--big"><p class="empty__title">No offers found</p><p>We couldn\'t find anything for your search. Try a merchant name, a category like "Dining", or a place like "Colombo".</p><button class="btn btn--primary" data-clear>Clear search &amp; filters</button></div>' + html;
     }
-    if (filtered) html = categoriesHTML(views, true) + html;
+    html = categoriesHTML(views, filtered) + html;     // categories always sit at the top
     host.innerHTML = html;
     renderSummary(total);
+    var fd = $("#filterDone"); if (fd) fd.textContent = filtered ? "Show " + total + " offer" + (total === 1 ? "" : "s") : "Show offers";
     renderTabs(views.filter(matches));
     collectCountdowns();
     updateCountdowns();
@@ -534,7 +549,7 @@
       if (v.b === "today" && v.status !== "ended") info[c].live++; else info[c].up++;
     });
     if (!cats.length) return "";
-    return '<section class="cats' + (compact ? " cats--compact" : "") + '" id="browse" aria-labelledby="h-browse">' +
+    return '<section class="cats ' + (compact ? "cats--compact" : "cats--top") + '" id="browse" aria-labelledby="h-browse">' +
       (compact ? "" : '<div class="sec__head"><div><p class="sec__eyebrow"><span class="sec__date">' + cats.length + ' categories</span></p><h2 class="sec__title" id="h-browse">Browse by category</h2><p class="sec__line">Jump straight to what you love.</p></div></div>') +
       '<div class="cats__grid" role="list">' + cats.map(function (c) {
         var img = categoryImage(c), on = state.filters.category === c;
@@ -660,23 +675,36 @@
     var offers = allOffers().filter(function (o) { return E.classify(o, nowFor(o)) !== "expired"; });
     var uniq = function (arr) { return arr.filter(function (x, i) { return x && arr.indexOf(x) === i; }); };
     var cats = uniq(offers.map(function (o) { return o.category; }));
+    var catCount = {}; offers.forEach(function (o) { catCount[o.category] = (catCount[o.category] || 0) + 1; });
     var locs = uniq(offers.map(function (o) { return o.location; })).sort(function (a, b) { return a === "Colombo" ? -1 : b === "Colombo" ? 1 : a.localeCompare(b); });
     var merch = uniq(offers.map(function (o) { return o.merchant; })).sort(function (a, b) { return a.localeCompare(b); });
     var f = state.filters;
-    var seg = function (name, opts) {
-      return '<div class="seg" role="radiogroup" aria-label="' + name + '">' + opts.map(function (o) {
+    var seg = function (name, opts, cls) {
+      return '<div class="seg ' + (cls || "") + '" role="radiogroup" aria-label="' + name + '">' + opts.map(function (o) {
         return '<button role="radio" aria-checked="' + (f[name] === o[0]) + '" class="seg__b' + (f[name] === o[0] ? " is-on" : "") + '" data-set="' + name + '" data-val="' + esc(o[0]) + '">' + esc(o[1]) + "</button>";
       }).join("") + "</div>";
     };
     var sel = function (name, label, opts) {
-      return '<label class="fld"><span>' + label + '</span><select data-select="' + name + '"><option value="">All</option>' +
+      return '<label class="fld"><span>' + label + '</span><select data-select="' + name + '"><option value="">All ' + label.toLowerCase() + "s</option>" +
         opts.map(function (o) { return '<option' + (f[name] === o ? " selected" : "") + ' value="' + esc(o) + '">' + esc(o) + "</option>"; }).join("") + "</select></label>";
     };
+    var copt = function (val, label, n) {
+      var on = f.category === val;
+      return '<button role="radio" aria-checked="' + on + '" class="copt' + (on ? " is-on" : "") + '" data-set="category" data-val="' + esc(val) + '">' +
+        '<span class="copt__n">' + esc(label) + '</span><span class="copt__c">' + n + "</span></button>";
+    };
     $("#filterBody").innerHTML =
-      '<div class="fgroup"><p class="fgroup__t">When</p>' + seg("when", [["", "Any time"], ["today", "Today"], ["tomorrow", "Tomorrow"], ["next3", "Next 3 days"], ["nextweek", "Next week"], ["comingup", "Coming up"]]) + "</div>" +
-      '<div class="fgroup"><p class="fgroup__t">My card</p>' + seg("card", [["", "Any Sampath card"], ["credit", "Credit card"], ["debit", "Debit card"]]) + "</div>" +
-      '<div class="fgroup"><p class="fgroup__t">Category</p>' + seg("category", [["", "All"]].concat(cats.map(function (c) { return [c, c]; }))) + "</div>" +
-      '<div class="fgroup fgroup--row">' + sel("location", "Location", locs) + sel("merchant", "Merchant", merch) + "</div>";
+      '<div class="fcols"><div class="fcol">' +
+        '<div class="fgroup"><p class="fgroup__t">My card</p>' + seg("card", [["", "All cards"], ["credit", "Credit"], ["debit", "Debit"]], "seg--fill") + "</div>" +
+        '<div class="fgroup"><p class="fgroup__t">When</p>' + seg("when", [["", "Any time"], ["today", "Today"], ["tomorrow", "Tomorrow"], ["next3", "Next 3 days"], ["nextweek", "Next week"], ["comingup", "Coming up"]], "seg--chips") + "</div>" +
+        '<div class="fgroup fgroup--row">' + sel("location", "Location", locs) + sel("merchant", "Merchant", merch) + "</div>" +
+      '</div><div class="fcol">' +
+        '<div class="fgroup"><p class="fgroup__t">Category</p><div class="cgrid" role="radiogroup" aria-label="Category">' +
+          copt("", "All categories", offers.length) + cats.map(function (c) { return copt(c, c, catCount[c]); }).join("") +
+        "</div></div>" +
+      "</div></div>";
+    var n = ["card", "when", "category", "location", "merchant"].filter(function (k) { return f[k]; }).length;
+    var fc = $("#filterCount"); if (fc) fc.textContent = n ? "(" + n + ")" : "";
   }
   function setFilter(k, v, fromNav) {
     var was = state.filters[k];
@@ -762,7 +790,7 @@
     var dlg = $("#modal");
     if (!dlg.open) { dlg.showModal ? dlg.showModal() : dlg.setAttribute("open", ""); }
     if (!baseTitle) baseTitle = document.title;
-    document.title = dealText(o) + " at " + o.merchant + " | Sampath Card Offers";
+    document.title = offerTitle(o);
     document.body.classList.add("modal-open");
     var mp = merchantPath(o.merchant);
     if (!fromHash && o.source !== "demo") {
@@ -1118,6 +1146,7 @@
     $("#filterBtn").addEventListener("click", function () { openFilters(); });
     $("#filterDone").addEventListener("click", function () { openFilters(false); scrollToOffers(); });
     $("#filterScrim").addEventListener("click", function () { openFilters(false); });
+    $("#filterClose").addEventListener("click", function () { openFilters(false); });
     document.addEventListener("pointerdown", function (e) {
       if (!$("#filterPanel").hidden && !e.target.closest(".bar")) openFilters(false);
     });
