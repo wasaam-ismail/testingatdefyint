@@ -1,683 +1,334 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-LK">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Glomark Better Savings</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Figtree:wght@400;500;600;700;800&family=Urbanist:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  /* Glomark world: navy wordmark, the multicolour Better Life "glow" ring, warm paper ground */
-  --navy:#1D376C;
-  --navy-deep:#132650;
-  --paper:#F7F6F2;
-  --ink:#18213D;
-  --muted:#5A6482;
-  --line:#E2E0D8;
-  --white:#FFFFFF;
-  --hot:#DE3232;
-  /* glow ring */
-  --lime:#8DC63F;
-  --sun:#F7AE2C;
-  --coral:#EE4B35;
-  --berry:#C61D7E;
-  --violet:#6E3C9A;
-  --sky:#1E8BCB;
-  --glow:conic-gradient(from 210deg,var(--lime),var(--sun),var(--coral),var(--berry),var(--violet),var(--sky),var(--lime));
-  --display:"Archivo","Arial Narrow",system-ui,sans-serif;
-  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mark:"Urbanist","Figtree",system-ui,sans-serif;
-  --r:14px;
-  color-scheme:light;
-  /* layout: navy hero with the glow ring as today's door, then an 8-up calendar on paper, then journal + January offers */
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
-img,svg{max-width:100%}
-button{font:inherit;color:inherit;cursor:pointer}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:6px}
-.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
-h1,h2,h3{text-wrap:balance;margin:0}
+  <meta charset="utf-8">
+  <script>window.SITE_ROOT="../../";</script>
+  <script>var p=location.pathname;if(location.protocol!=='file:'&&p.slice(-1)!=='/'&&p.split('/').pop().indexOf('.')<0)location.replace(p+'/'+location.search+location.hash);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>25% off at Glomark | Sampath Card Offers</title>
+  <meta name="description" content="25% off at Glomark with Sampath Bank credit cards (28 Dec 2026). Conditions apply.">
+  <meta name="application-name" content="Sampath Card Offers">
+  <meta name="author" content="Sampath Bank PLC">
+  <meta name="theme-color" content="#F47920">
+  <meta name="format-detection" content="telephone=no">
 
-/* ---------- header ---------- */
-.top{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
-.top .wrap{display:flex;align-items:center;gap:24px;height:68px}
-.logo{display:flex;flex-direction:column;line-height:1;text-decoration:none;color:var(--navy)}
-.logo small{font-family:var(--mark);font-weight:500;font-size:11px;letter-spacing:.02em;margin-left:2px;color:var(--navy)}
-.logo b{font-family:var(--mark);font-weight:600;font-size:25px;letter-spacing:.06em;display:flex;align-items:center}
-.ring-o{display:inline-block;width:.74em;height:.74em;border-radius:50%;background:var(--glow);-webkit-mask:radial-gradient(circle,transparent 55%,#000 57%);mask:radial-gradient(circle,transparent 55%,#000 57%);margin:0 .02em;transform:translateY(-.02em)}
-.nav{display:flex;gap:22px;margin-left:12px;font-weight:600;font-size:14.5px}
-.nav a{text-decoration:none;color:var(--muted)}
-.nav a:hover{color:var(--navy)}
-.hot{background:var(--hot);color:#fff;font-weight:800;font-size:13px;letter-spacing:.04em;padding:7px 12px;border-radius:6px;text-decoration:none}
+  <!-- SEARCH ENGINES
+       This is a test copy on a test web address, so it is kept OUT of Google.
+       When the site moves to Sampath's own web address:
+         1. change the robots line to:  <meta name="robots" content="index, follow, max-image-preview:large">
+         2. replace https://www.testingatdefyint.site/sampath/ with the new address
+            here, in sitemap.xml and in the structured data at the bottom of this head. -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://www.testingatdefyint.site/sampath/offers/glomark/">
 
-/* ---------- hero ---------- */
-.hero{background:radial-gradient(1200px 500px at 85% 20%,#2A4C8F 0%,transparent 60%),var(--navy);color:#fff;position:relative;overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:56px;padding-bottom:64px}
-.lockup{display:flex;align-items:center;gap:14px;margin-bottom:18px}
-.lockup .pill{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(255,255,255,.35);padding:5px 10px;border-radius:999px}
-.hero h1{font-family:var(--display);font-stretch:72%;font-weight:900;font-size:clamp(64px,10vw,132px);line-height:.86;letter-spacing:-.01em;text-transform:uppercase}
-.hero h1 .l{display:block}
-.hero h1 .c span:nth-child(6n+1){color:var(--lime)}
-.hero h1 .c span:nth-child(6n+2){color:var(--sun)}
-.hero h1 .c span:nth-child(6n+3){color:var(--coral)}
-.hero h1 .c span:nth-child(6n+4){color:#F06CB4}
-.hero h1 .c span:nth-child(6n+5){color:#B28BE0}
-.hero h1 .c span:nth-child(6n+6){color:#62C0F2}
-.hero .tag{font-family:var(--display);font-stretch:85%;font-weight:700;font-size:clamp(20px,2.3vw,27px);margin:22px 0 10px;line-height:1.15}
-.hero p.lead{max-width:52ch;color:#D5DCEC;font-size:17px;margin:0 0 28px}
-.cta{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:10px;border:0;border-radius:999px;padding:14px 24px;font-weight:700;font-size:15.5px;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease}
-.btn:hover{transform:translateY(-1px)}
-.btn.primary{background:#fff;color:var(--navy);box-shadow:0 8px 24px -8px rgba(0,0,0,.45)}
-.btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.45)}
-.btn.navy{background:var(--navy);color:#fff}
+  <!-- Icons -->
+  <link rel="icon" href="../../favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="../../site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="Sampath Offers">
 
-/* today's ring */
-.today{display:grid;place-items:center;position:relative}
-.ringbox{position:relative;width:min(400px,80vw);aspect-ratio:1;display:grid;place-items:center}
-.ringbox::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--glow);-webkit-mask:radial-gradient(circle,transparent 63%,#000 64%);mask:radial-gradient(circle,transparent 63%,#000 64%);animation:spin 26s linear infinite}
-.ringbox::after{content:"";position:absolute;inset:-14%;border-radius:50%;background:var(--glow);filter:blur(60px);opacity:.28;z-index:-0;animation:spin 26s linear infinite}
-.ringcore{position:relative;z-index:1;width:76%;aspect-ratio:1;border-radius:50%;background:#fff;color:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
-.ringcore .k{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-.ringcore .big{font-family:var(--display);font-stretch:70%;font-weight:900;font-size:clamp(70px,9vw,104px);line-height:.9;margin:4px 0 2px}
-.ringcore .date{font-weight:700;font-size:15px;margin-bottom:14px}
-.ringcore .peekline{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:22px;line-height:1.05;margin:-4px 0 12px}
-.ringcore .btn{padding:12px 20px;font-size:14.5px}
-.count{margin-top:22px;font-size:14px;color:#C9D2E6;text-align:center}
-.count b{color:#fff;font-variant-numeric:tabular-nums;font-weight:700}
-@keyframes spin{to{transform:rotate(360deg)}}
+  <!-- Social sharing (WhatsApp, Facebook, LinkedIn, X, iMessage) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sampath Bank">
+  <meta property="og:locale" content="en_LK">
+  <meta property="og:title" content="25% off at Glomark with Sampath cards">
+  <meta property="og:description" content="28 Dec 2026. Never miss an offer.">
+  <meta property="og:url" content="https://www.testingatdefyint.site/sampath/offers/glomark/">
+  <meta property="og:image" content="https://www.testingatdefyint.site/sampath/assets/categories/Supermarkets.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="338">
+  <meta property="og:image:alt" content="Glomark: 25% off with Sampath Bank cards">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="25% off at Glomark with Sampath cards">
+  <meta name="twitter:description" content="28 Dec 2026. Never miss an offer.">
+  <meta name="twitter:image" content="https://www.testingatdefyint.site/sampath/assets/categories/Supermarkets.jpg">
+  <meta name="twitter:image:alt" content="Glomark: 25% off with Sampath Bank cards">
 
-/* ---------- steps ---------- */
-.steps{background:var(--white);border-bottom:1px solid var(--line)}
-.steps ol{list-style:none;margin:0;padding:22px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.steps li{display:flex;gap:14px;align-items:flex-start}
-.steps .n{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:18px;color:#fff}
-.steps li:nth-child(1) .n{background:var(--lime)}
-.steps li:nth-child(2) .n{background:var(--sun)}
-.steps li:nth-child(3) .n{background:var(--coral)}
-.steps h3{font-size:16px;font-weight:800}
-.steps p{margin:2px 0 0;color:var(--muted);font-size:14.5px;line-height:1.45}
+  <!-- Structured data (helps Google understand the page) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BankOrCreditUnion",
+        "@id": "https://www.sampath.lk/#bank",
+        "name": "Sampath Bank PLC",
+        "url": "https://www.sampath.lk",
+        "logo": "https://www.testingatdefyint.site/sampath/assets/img/sampath-logo.png",
+        "telephone": "+94 11 2 303050",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Colombo",
+          "addressCountry": "LK"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.testingatdefyint.site/sampath/#website",
+        "url": "https://www.testingatdefyint.site/sampath/",
+        "name": "Sampath Card Offers",
+        "alternateName": "Never Miss an Offer",
+        "inLanguage": "en-LK",
+        "publisher": {
+          "@id": "https://www.sampath.lk/#bank"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.testingatdefyint.site/sampath/offers/glomark/#page",
+        "url": "https://www.testingatdefyint.site/sampath/offers/glomark/",
+        "name": "25% off at Glomark | Sampath Card Offers",
+        "description": "25% off at Glomark with Sampath Bank credit cards (28 Dec 2026). Conditions apply.",
+        "isPartOf": {
+          "@id": "https://www.testingatdefyint.site/sampath/#website"
+        },
+        "about": {
+          "@id": "https://www.sampath.lk/#bank"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://www.testingatdefyint.site/sampath/assets/categories/Supermarkets.jpg",
+          "width": 600,
+          "height": 338
+        },
+        "inLanguage": "en-LK"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.testingatdefyint.site/sampath/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Supermarkets",
+            "item": "https://www.testingatdefyint.site/sampath/supermarkets/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Glomark",
+            "item": "https://www.testingatdefyint.site/sampath/offers/glomark/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
-/* ---------- section heads ---------- */
-section.block{padding:72px 0}
-.head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:28px}
-.eyebrow{font-size:12.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--berry);margin-bottom:8px}
-.head h2{font-family:var(--display);font-stretch:75%;font-weight:900;font-size:clamp(38px,5vw,58px);line-height:.95;text-transform:uppercase;color:var(--navy)}
-.head p{margin:10px 0 0;color:var(--muted);max-width:56ch}
-
-/* filters + progress */
-.tools{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin-bottom:20px}
-.progress{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--muted);font-weight:600}
-.bar{width:180px;height:8px;border-radius:99px;background:#E8E6DF;overflow:hidden}
-.bar i{display:block;height:100%;background:var(--glow);background:linear-gradient(90deg,var(--lime),var(--sun),var(--coral),var(--berry),var(--violet));border-radius:99px;transition:width .5s ease}
-
-/* ---------- calendar ---------- */
-.cal{display:grid;grid-template-columns:repeat(8,1fr);gap:12px}
-.box{position:relative;aspect-ratio:1/1.08;border-radius:var(--r);border:0;padding:12px;text-align:left;display:flex;flex-direction:column;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease,opacity .2s ease;isolation:isolate}
-.box:hover{transform:translateY(-3px)}
-.box .dn{font-family:var(--display);font-stretch:70%;font-weight:900;font-size:clamp(30px,3.4vw,44px);line-height:.9}
-.box .dw{font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-top:3px}
-.box .foot{margin-top:auto;font-size:11.5px;font-weight:700}
-/* past */
-.box[data-state="past"]{background:var(--white);box-shadow:0 0 0 1px var(--line)}
-.box[data-state="past"] .dn{color:var(--navy)}
-.box[data-state="past"] .dw{color:var(--muted)}
-.box .pk{font-family:var(--display);font-stretch:78%;font-weight:800;font-size:clamp(15px,1.5vw,19px);line-height:1;color:var(--ink);margin-top:auto}
-.box .ps{font-size:12px;font-weight:600;color:var(--muted);line-height:1.2;margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.box .ended{position:absolute;top:12px;right:10px;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:#EFEDE6;color:var(--muted);padding:3px 7px;border-radius:99px}
-/* today */
-.box[data-state="today"]{background:#fff;color:var(--navy);box-shadow:0 18px 40px -18px rgba(29,55,108,.55)}
-.box[data-state="today"]::before{content:"";position:absolute;inset:-60%;background:var(--glow);animation:spin 6s linear infinite;z-index:-2}
-.box[data-state="today"]::after{content:"";position:absolute;inset:4px;border-radius:calc(var(--r) - 4px);background:#fff;z-index:-1}
-.box .now{align-self:flex-start;margin-top:8px;order:5;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--hot);color:#fff;padding:3px 7px;border-radius:99px;animation:pulse 1.8s ease-in-out infinite}
-.box .gift{width:40%;margin:auto auto 0;order:4}
-.box[data-state="today"] .pk,.box[data-state="today"] .ps{order:4}
-.box[data-state="today"].opened .gift{display:none}
-/* future */
-.box[data-state="future"]{background:var(--navy);color:#fff}
-.box[data-state="future"] .dn{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.85)}
-.box[data-state="future"] .dw{color:#A8B6D6}
-.box[data-state="future"] .lock{width:22px;height:22px;margin-top:auto;opacity:.85}
-.box[data-state="future"] .foot{color:#C8D2EA;margin-top:6px}
-.box.dim{opacity:.22}
-.box.shake{animation:shake .4s ease}
-.box.brand{background:var(--glow);color:#fff;cursor:default;justify-content:center}
-.box.brand:hover{transform:none}
-.box.brand .inner{background:var(--navy);position:absolute;inset:4px;border-radius:calc(var(--r) - 4px);padding:12px;display:flex;flex-direction:column;justify-content:center}
-.box.brand b{font-family:var(--display);font-stretch:72%;font-weight:900;font-size:clamp(14px,1.5vw,19px);line-height:.95;text-transform:uppercase}
-.box.brand span{font-size:11.5px;color:#C8D2EA;margin-top:6px;line-height:1.3}
-@keyframes pulse{50%{transform:scale(1.08)}}
-@keyframes shake{20%,60%{transform:translateX(-5px)}40%,80%{transform:translateX(5px)}}
-
-.legend{display:flex;flex-wrap:wrap;gap:18px;margin-top:18px;font-size:13px;color:var(--muted);font-weight:600}
-.legend span{display:inline-flex;align-items:center;gap:8px}
-.legend i{width:16px;height:16px;border-radius:5px;display:inline-block}
-
-/* ---------- resolutions journal ---------- */
-.journal{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.jgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.jrow{display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:center;padding:14px 16px;border-radius:12px;background:var(--paper);border-left:5px solid var(--c)}
-.jrow .d{font-family:var(--display);font-stretch:70%;font-weight:900;font-size:30px;line-height:.9;color:var(--navy)}
-.jrow .d small{display:block;font-family:var(--body);font-size:10.5px;font-weight:800;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-top:4px}
-.jrow q{font-size:16px;font-weight:600;line-height:1.35;quotes:none;display:block}
-.jrow .ja{display:block;font-size:14px;font-weight:500;color:var(--muted);margin-top:4px;line-height:1.4}
-.jempty{color:var(--muted)}
-
-/* ---------- january offers ---------- */
-.offers{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.offer{background:var(--white);border-radius:var(--r);box-shadow:0 0 0 1px var(--line);padding:18px 16px 16px;display:flex;flex-direction:column;gap:6px;position:relative;overflow:hidden}
-.offer::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:var(--c)}
-.offer .cat{font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.offer .deal{font-family:var(--display);font-stretch:72%;font-weight:900;font-size:34px;line-height:.92;color:var(--navy);text-transform:uppercase}
-.offer .what{font-weight:600;font-size:14.5px;line-height:1.35}
-.offer .when{margin-top:auto;padding-top:10px;font-size:12.5px;font-weight:700;color:var(--c2,var(--muted));display:flex;align-items:center;gap:6px}
-.note{margin-top:16px;font-size:13px;color:var(--muted)}
-
-/* ---------- thought ---------- */
-.thought{background:var(--navy);color:#fff;text-align:left}
-.thought .wrap{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;padding-top:64px;padding-bottom:64px}
-.thought .mini{width:110px;aspect-ratio:1;border-radius:50%;background:var(--glow);-webkit-mask:radial-gradient(circle,transparent 60%,#000 61%);mask:radial-gradient(circle,transparent 60%,#000 61%)}
-.thought blockquote{margin:0;font-family:var(--display);font-stretch:82%;font-weight:700;font-size:clamp(24px,3vw,36px);line-height:1.12;max-width:30ch}
-.thought cite{display:block;margin-top:14px;font-style:normal;font-size:14px;color:#AFBDDD;font-family:var(--body);font-weight:600}
-
-footer{padding:28px 0 40px;color:var(--muted);font-size:13px}
-footer .wrap{display:flex;flex-wrap:wrap;gap:12px 30px;justify-content:space-between}
-
-/* ---------- modal ---------- */
-.scrim{position:fixed;inset:0;background:rgba(14,24,52,.66);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:16px;z-index:80}
-.scrim.on{display:flex}
-.modal{width:min(460px,100%);max-height:calc(100% - 8px);overflow:auto;background:#fff;border-radius:22px;position:relative;box-shadow:0 40px 90px -30px rgba(0,0,0,.6);animation:pop .28s cubic-bezier(.2,.9,.3,1.2)}
-@keyframes pop{from{transform:scale(.92);opacity:0}}
-.mx{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.9);font-size:20px;line-height:1;z-index:3}
-.mtop{padding:22px 24px 0;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.mdate{font-size:13.5px;font-weight:700;color:var(--muted)}
-.stage{margin:18px 24px 0;height:210px;border-radius:16px;position:relative;perspective:1000px;background:var(--glow);padding:4px}
-.stage .inside{position:absolute;inset:4px;border-radius:13px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px}
-.stage .inside .o1{font-family:var(--display);font-stretch:68%;font-weight:900;font-size:76px;line-height:.85;color:var(--navy);text-transform:uppercase}
-.stage .inside .o2{font-family:var(--display);font-stretch:85%;font-weight:800;font-size:22px;line-height:1.05;margin-top:8px;color:var(--ink)}
-.door{position:absolute;top:4px;bottom:4px;width:calc(50% - 4px);background:var(--navy);transition:transform 1s cubic-bezier(.6,.05,.25,1);display:flex;align-items:center;z-index:2;backface-visibility:hidden}
-.door.l{left:4px;border-radius:13px 0 0 13px;transform-origin:left center;justify-content:flex-end;box-shadow:inset -1px 0 0 rgba(255,255,255,.15)}
-.door.r{right:4px;border-radius:0 13px 13px 0;transform-origin:right center;justify-content:flex-start}
-.door .num{font-family:var(--display);font-stretch:70%;font-weight:900;font-size:88px;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.9);line-height:1}
-.door.l .num{transform:translateX(50%)}
-.door.r .num{transform:translateX(-50%);clip-path:inset(0 0 0 50%)}
-.door.l .num{clip-path:inset(0 50% 0 0)}
-.door .knob{position:absolute;top:50%;width:10px;height:10px;border-radius:50%;background:var(--sun);transform:translateY(-50%)}
-.door.l .knob{right:14px}.door.r .knob{left:14px}
-.stage.open .door.l{transform:rotateY(-108deg)}
-.stage.open .door.r{transform:rotateY(108deg)}
-.tapcue{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);z-index:3;background:#fff;color:var(--navy);font-weight:800;font-size:13px;padding:7px 14px;border-radius:99px;border:0;white-space:nowrap;box-shadow:0 8px 20px -8px rgba(0,0,0,.5)}
-.stage.open .tapcue{display:none}
-.mbody{padding:20px 24px 24px}
-.reveal{transition:opacity .45s ease .55s,transform .45s ease .55s}
-.mbody.hide .reveal{opacity:0;transform:translateY(8px);pointer-events:none}
-.rlabel{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--berry);margin-bottom:6px;display:flex;align-items:center;gap:8px}
-.rtext{font-family:var(--display);font-stretch:88%;font-weight:700;font-size:23px;line-height:1.18;color:var(--navy);margin:0 0 12px}
-.act{display:flex;flex-direction:column;gap:2px;border-left:4px solid var(--lime);background:#F2F8EA;border-radius:0 10px 10px 0;padding:10px 14px;margin:0 0 18px;font-size:15px;font-weight:600;line-height:1.4;color:var(--ink)}
-.act span{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#3F7A16}
-.voucher{position:relative;border:1.5px dashed #CFCBC0;border-radius:14px;padding:16px;background:var(--paper)}
-.voucher::before,.voucher::after{content:"";position:absolute;top:50%;width:16px;height:16px;border-radius:50%;background:#fff;transform:translateY(-50%)}
-.voucher::before{left:-9px;border-right:1.5px dashed #CFCBC0}
-.voucher::after{right:-9px;border-left:1.5px dashed #CFCBC0}
-.vrow{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
-.vrow .k{font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.code{font-family:var(--display);font-stretch:100%;font-weight:800;font-size:22px;letter-spacing:.08em;color:var(--ink);font-variant-numeric:tabular-nums}
-.barcode{display:block;width:100%;height:58px;margin:10px 0 8px}
-.vfine{font-size:12.5px;color:var(--muted);line-height:1.4}
-.vstatus{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:800;color:#2C6B12}
-.vstatus i{width:8px;height:8px;border-radius:50%;background:var(--lime);animation:pulse 1.6s infinite}
-.endedbox{border-radius:12px;background:#F1EFE9;padding:14px 16px;font-size:14px;color:var(--muted)}
-.endedbox b{color:var(--ink)}
-.mact{display:flex;gap:10px;margin-top:16px}
-.mact .btn{flex:1;justify-content:center}
-.btn.line{background:#fff;color:var(--navy);box-shadow:inset 0 0 0 1.5px var(--line)}
-
-.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:12px 18px;border-radius:12px;font-weight:600;font-size:14.5px;opacity:0;pointer-events:none;transition:.25s ease;z-index:90;max-width:calc(100% - 32px);text-align:center}
-.toast.on{opacity:1;transform:translate(-50%,0)}
-#confetti{position:fixed;inset:0;pointer-events:none;z-index:85}
-
-/* ---------- responsive ---------- */
-@media (max-width:1080px){
-  .offers{grid-template-columns:repeat(3,1fr)}
-  .nav{display:none}
-}
-@media (max-width:860px){
-  .hero .wrap{grid-template-columns:1fr;padding-top:40px}
-  .today{order:-1}
-  .cal{grid-template-columns:repeat(4,1fr)}
-  .jgrid{grid-template-columns:1fr}
-  .steps ol{grid-template-columns:1fr;gap:14px}
-  .offers{grid-template-columns:repeat(2,1fr)}
-  .hot{display:none}
-}
-@media (max-width:520px){
-  .wrap{padding:0 16px}
-  .top .wrap{gap:10px}
-  .logo b{font-size:21px}
-      .cal{gap:8px}
-  .box{padding:9px}
-  .box .pk{font-size:14px}
-  .box .ps,.box .ended{display:none}
-  .box .foot{font-size:10px}
-  .jrow{grid-template-columns:44px 1fr;}
-  .offers{grid-template-columns:1fr}
-  .thought .wrap{grid-template-columns:1fr}
-  .thought .mini{width:72px}
-  section.block{padding:52px 0}
-}
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  html{scroll-behavior:auto}
-}
-</style>
+  <!-- Montserrat (free, self-hosted in assets/fonts). If Sampath supplies its own
+       brand web fonts, see README. -->
+  <link rel="stylesheet" href="../../assets/fonts/fonts.css?v=20261112">
+  <link rel="preload" as="image" type="image/webp" imagesrcset="../../assets/img/hero-family-720.webp 720w, ../../assets/img/hero-family-1100.webp 1100w" imagesizes="(max-width: 760px) 92vw, 620px">
+  <link rel="stylesheet" href="../../assets/css/styles.css?v=20261112">
 </head>
 <body>
+  <a class="skip" href="#offers">Skip to offers</a>
 
-<header class="top">
-  <div class="wrap">
-    <a class="logo" href="#top" aria-label="Softlogic Glomark home">
-      <small>softlogic</small>
-      <b>GL<span class="ring-o" aria-hidden="true"></span>MARK</b>
-    </a>
-    <nav class="nav" aria-label="Sections">
-      <a href="#calendar">Calendar</a>
-      <a href="#resolutions">My Resolutions</a>
-      <a href="#january">January Offers</a>
-    </nav>
-    <a class="hot" style="margin-left:auto" href="#january">HOT DEALS</a>
-  </div>
-</header>
-
-<main id="top">
-  <section class="hero">
-    <div class="wrap">
-      <div>
-        <div class="lockup">
-          <span class="pill">31 Days of Better · January 2027</span>
-        </div>
-        <h1><span class="l">Better</span><span class="l c" aria-label="Savings"><span>S</span><span>a</span><span>v</span><span>i</span><span>n</span><span>g</span><span>s</span></span></h1>
-        <p class="tag">31 days. 31 offers. 31 little promises to yourself.</p>
-        <p class="lead">A new box opens at Glomark every day this January. Inside each one is an exclusive discount and a Better Resolution, a small promise that makes everyday life a little better. Unlock today's box and show it at the counter.</p>
-        <div class="cta">
-          <button class="btn primary" type="button" id="heroOpen">Open today's box <span aria-hidden="true">→</span></button>
-          <a class="btn ghost" href="#calendar">See all 31 days</a>
-        </div>
+  <!-- HEADER: Sampath Bank logo top-left -->
+  <header class="top">
+    <div class="wrap top__in">
+      <a class="top__logo" href="https://www.sampath.lk" aria-label="Sampath Bank home">
+        <img src="../../assets/img/sampath-logo.png" alt="Sampath Bank: We present your future" width="873" height="188" fetchpriority="high">
+      </a>
+      <div class="top__right">
+        <span class="top__label">Card offers</span>
+        <span class="live" aria-label="Sri Lanka time">
+          <span class="pulse pulse--brand"></span><span class="live__t">Live</span>
+          <span class="live__clock" id="clock">--:--:--</span><span class="live__tz">SL time</span>
+        </span>
       </div>
-      <div class="today">
-        <div class="ringbox">
-          <div class="ringcore" id="ringcore"></div>
-        </div>
-        <p class="count" id="count"></p>
+    </div>
+  </header>
+
+  <!-- HERO: "Never miss an offer" + live summary + the offer ending soonest -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="hero__shapes" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="wrap hero__in">
+      <div class="hero__copy">
+        <p class="hero__eyebrow">Supermarkets</p>
+        <h1 class="hero__title" id="heroTitle">Glomark offer</h1>
+        <p class="hero__lede">25% off with Sampath credit cards, 28 Dec 2026.</p>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <picture>
+          <source type="image/webp" srcset="../../assets/img/hero-family-720.webp 720w, ../../assets/img/hero-family-1100.webp 1100w" sizes="(max-width: 760px) 92vw, 620px">
+          <img src="../../assets/img/hero-family-720.png" alt="" width="1100" height="766" fetchpriority="high" decoding="async">
+        </picture>
+      </div>
+      <div class="hero__meta">
+        <ul class="stats" aria-label="Offer summary">
+          <li><b id="statLive">0</b><span>Live now</span></li>
+          <li><b id="statSoon">0</b><span>This week</span></li>
+          <li><b id="statLater">0</b><span>Coming up</span></li>
+        </ul>
+        <div class="feature" id="feature" aria-live="off"></div>
       </div>
     </div>
   </section>
 
-  <div class="steps">
-    <div class="wrap">
-      <ol>
-        <li><span class="n">1</span><div><h3>Visit every day</h3><p>One new box unlocks each day from 1 to 31 January. Earlier boxes stay visible.</p></div></li>
-        <li><span class="n">2</span><div><h3>Unlock today's box</h3><p>Reveal the day's exclusive discount and its Better Resolution.</p></div></li>
-        <li><span class="n">3</span><div><h3>Show it at the counter</h3><p>Present your unlocked voucher at any Glomark checkout to collect the saving that day.</p></div></li>
-      </ol>
-    </div>
-  </div>
-
-  <section class="block" id="calendar">
-    <div class="wrap">
-      <div class="head">
-        <div>
-          <div class="eyebrow">The calendar</div>
-          <h2>31 boxes of better</h2>
-          <p>Only today's box can be unlocked. Past boxes show what you can still learn from, future boxes wait for their day.</p>
-        </div>
-      </div>
+  <!-- STICKY BAR: timeline + search + filters -->
+  <div class="bar">
+    <div class="wrap bar__in">
+      <nav class="tabs" aria-label="Offer timeline">
+        <a class="tab is-on" href="#today" data-tab="today"><span class="tab__t">Today</span><span class="tab__n">0</span></a>
+        <a class="tab" href="#tomorrow" data-tab="tomorrow"><span class="tab__t">Tomorrow</span><span class="tab__n">0</span></a>
+        <a class="tab" href="#next3" data-tab="next3"><span class="tab__t">Next 3 days</span><span class="tab__n">0</span></a>
+        <a class="tab" href="#nextweek" data-tab="nextweek"><span class="tab__t">Next week</span><span class="tab__n">0</span></a>
+        <a class="tab" href="#comingup" data-tab="comingup"><span class="tab__t">Coming up</span><span class="tab__n">0</span></a>
+      </nav>
       <div class="tools">
-        <div class="progress"><div class="bar"><i id="barFill" style="width:0"></i></div><span id="progTxt"></span></div>
-      </div>
-      <div class="cal" id="cal"></div>
-      <div class="legend">
-        <span><i style="background:#fff;box-shadow:0 0 0 1px var(--line)"></i>Ended: view the offer and resolution</span>
-        <span><i style="background:var(--glow)"></i>Today: unlock and redeem</span>
-        <span><i style="background:var(--navy)"></i>Locked until its day</span>
+        <form class="search" id="searchForm" role="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <label class="sr-only" for="search">Search offers</label>
+          <input id="search" type="search" placeholder="Search merchants, categories, places…" autocomplete="off" enterkeyhint="search">
+        </form>
+        <button class="fbtn" id="filterBtn" aria-expanded="false" aria-controls="filterPanel">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span>Filters</span><span class="fbtn__badge" id="filterBadge" hidden>0</span>
+        </button>
       </div>
     </div>
-  </section>
-
-  <section class="block journal" id="resolutions">
-    <div class="wrap">
-      <div class="head">
-        <div>
-          <div class="eyebrow">Better Resolutions</div>
-          <h2>Little promises, so far</h2>
-          <p>Every box comes with a resolution worth keeping long after the discount ends. Small actions, one day at a time.</p>
+    <div class="fpanel" id="filterPanel" hidden>
+      <div class="fpanel__scrim" id="filterScrim"></div>
+      <div class="fpanel__box" role="dialog" aria-label="Filter offers">
+        <div class="wrap">
+          <div class="fpanel__grab" aria-hidden="true"></div>
+          <div class="fpanel__head">
+            <p class="fpanel__title">Filter offers <span id="filterCount"></span></p>
+            <button class="fpanel__x" id="filterClose" aria-label="Close filters"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          </div>
+          <div id="filterBody"></div>
+          <div class="fpanel__foot">
+            <button class="linkbtn" data-clear>Clear all</button>
+            <button class="btn btn--primary" id="filterDone">Show offers</button>
+          </div>
         </div>
       </div>
-      <div class="jgrid" id="journal"></div>
     </div>
-  </section>
-
-  <section class="block" id="january">
-    <div class="wrap">
-      <div class="head">
-        <div>
-          <div class="eyebrow" style="color:var(--hot)">Also this month</div>
-          <h2>January offers at Glomark</h2>
-          <p>The daily boxes come on top of these month-long January deals, so you can stack your savings.</p>
-        </div>
-      </div>
-      <div class="offers" id="offers"></div>
-      <p class="note">Example offers for demonstration. Terms, conditions and exclusions apply.</p>
-    </div>
-  </section>
-
-  <section class="thought">
-    <div class="wrap">
-      <div class="mini" aria-hidden="true"></div>
-      <blockquote>A better year isn't always about making big changes. Sometimes, it's about making more room for the little things that matter.
-        <cite>Glomark · Better Savings, January 2027</cite>
-      </blockquote>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <span>Softlogic Glomark · Better Savings concept demo</span>
-    <span>All offers and bank promotions are proposed concepts subject to commercial and partner approval. One redemption per customer per day.</span>
+    <div class="wrap"><div class="summary" id="summary" hidden aria-live="polite"></div></div>
   </div>
-</footer>
 
-<div class="scrim" id="scrim" aria-hidden="true">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle" id="modal"></div>
-</div>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-<canvas id="confetti" aria-hidden="true"></canvas>
-
-<script>
-(function(){
-const YEAR = 2027, MONTH = 0; // January. Change MONTH to 11 (and YEAR to 2026) for a December run.
-const MONTH_NAME = new Date(YEAR, MONTH, 1).toLocaleDateString('en-GB',{month:'long'});
-const MON_SHORT = new Date(YEAR, MONTH, 1).toLocaleDateString('en-GB',{month:'short'});
-
-const RIBBONS = ['var(--lime)','var(--sun)','var(--coral)','var(--berry)','var(--violet)','var(--sky)'];
-const colorOf = d=>RIBBONS[(d-1)%RIBBONS.length];
-
-const DAYS = [
-  ["10% OFF","Fresh Produce","Fill half your plate with fresh food.","Add one extra serving of fresh produce to lunch and dinner every day this week."],
-  ["15% OFF","Chocolates","Stop saving the good things for later.","Share a bar with someone today, and enjoy yours slowly with your phone away."],
-  ["20% OFF","Baking Essentials","Make something with your hands for someone you love.","Bake one batch this weekend and hand-deliver half to a friend or neighbour."],
-  ["15% OFF","Reusable Bags","Say no to one plastic bag at a time.","Keep two reusable bags in your car or handbag so you never shop without one."],
-  ["20% OFF","with Selected Bank Cards","Pay your future self first.","Set up a standing order that moves 10% of your salary into savings on payday."],
-  ["15% OFF","Ice Cream","Put date night back on the calendar.","Book one evening this week with someone you love. Phones away, dessert on."],
-  ["10% OFF","Local Products","Buy local, and be proud of it.","Swap one imported item in your basket for a Sri Lankan-made one."],
-  ["15% OFF","Personal Care","Give yourself 20 minutes a day.","Block 20 minutes each evening for something just for you: a walk, a bath, a book."],
-  ["Buy 1 Get 1","FREE on Selected Snacks","See the friend you keep meaning to call.","Invite them over this week and open the second pack together."],
-  ["10% OFF","Fresh Fruits","Swap one sugary snack for fruit.","Keep a fruit bowl on the table and reach for it first when the 4 pm craving hits."],
-  ["15% OFF","Coffee & Tea","Have the conversation you've been putting off.","Make two cups of tea and sit down with the person you need to talk to."],
-  ["20% OFF","Cleaning Essentials","Clear one corner, clear your mind.","Spend 15 minutes today decluttering one drawer, shelf or table."],
-  ["15% OFF","Breakfast Essentials","Start every morning with breakfast.","Get tomorrow's breakfast ready tonight so your morning starts calm."],
-  ["20% OFF","Pasta & Sauces","Eat together at least once a day.","Choose one meal a day where everyone sits at the table with the TV off."],
-  ["15% OFF","Biscuits & Cookies","Make time to play again.","Spend one evening on a childhood favourite: carrom, cards or a board game."],
-  ["20% OFF","with Selected Credit Cards","Know where your money goes.","Write down every spend for one week, then cut one thing you won't miss."],
-  ["15% OFF","Household Essentials","Share the load at home.","Take over one household chore for good, and tell your family it's yours."],
-  ["10% OFF","Fresh Vegetables","Cook one more meal at home each week.","Plan the week's dinners on Sunday and shop only for what's on the list."],
-  ["20% OFF","Cake Mixes & Decorations","Celebrate the small wins out loud.","Mark one small achievement this week, yours or someone else's, with a cake."],
-  ["15% OFF","Sri Lankan Spices","Learn a family recipe before it's lost.","Ask an elder to teach you their curry, and write it down step by step."],
-  ["20% OFF","Family Packs","Share more than you keep.","Put together a small care pack this week for someone who needs it more."],
-  ["15% OFF","Sweets & Candy","Do something just for the joy of it.","Try one thing this week you haven't done since you were a child."],
-  ["20% OFF","Dessert Ingredients","Start a family tradition.","Make one dessert together as a family, and repeat it every month."],
-  ["15% OFF","Party Snacks & Drinks","Get together without waiting for a reason.","Host a simple get-together this weekend. No occasion needed."],
-  ["20% OFF","Gift Hampers","Tell someone what they mean to you.","Send a small gift or a handwritten note to someone today, just because."],
-  ["15% OFF","Storage Containers","Waste less food.","Store leftovers in clear containers and plan one use-it-up meal a week."],
-  ["15% OFF","Nuts & Dried Fruits","Snack smarter, every day.","Pack a handful of nuts for work instead of buying a snack on the go."],
-  ["20% OFF","Frozen Foods","Trade time in the kitchen for time together.","Make tonight a quick-dinner night and spend the extra hour with family."],
-  ["10% OFF","Locally Sourced Produce","Back the people who grow our food.","Choose produce from a local farmer this week and find out where it was grown."],
-  ["20% OFF","Selected Pantry Essentials","Plan ahead so you can enjoy today.","Write a two-week pantry list and spend the time you save on something you love."],
-  ["25% OFF","with Selected Bank Cards","Set one goal for the rest of the year.","Write down one goal, stick it on the fridge, and take the first step today."]
-].map((r,i)=>({d:i+1,big:r[0],sub:r[1],res:r[2],act:r[3]}));
-
-const JAN = [
-  {cat:'Bank cards', deal:'25% off', what:'Total bill with selected credit cards', when:'Every Friday', c:'var(--sky)'},
-  {cat:'Fresh', deal:'20% off', what:'Fresh fish & meat counter', when:'Every Wednesday', c:'var(--coral)'},
-  {cat:'Back to school', deal:'15% off', what:'Lunchboxes, water bottles & school snacks', when:'1 to 15 January', c:'var(--sun)'},
-  {cat:'Better breakfast', deal:'Buy 2 save 20%', what:'Oats, muesli & granola', when:'All month', c:'var(--lime)'},
-  {cat:'Gut-smart', deal:'20% off', what:'Probiotic yoghurts, kombucha & fermented foods', when:'Better Life aisle', c:'var(--berry)'},
-  {cat:'glomark.lk', deal:'Rs. 1,000 off', what:'Online orders over Rs. 12,000 with code BETTERJAN', when:'Online only', c:'var(--navy)'},
-  {cat:'Bakery', deal:'30% off', what:'Fresh bread & pastries after 8 pm', when:'Every day', c:'var(--sun)'},
-  {cat:'Household', deal:'Buy 1 get 1', what:'Selected detergents & dishwash liquids', when:'While stocks last', c:'var(--violet)'},
-  {cat:'Pharmacy', deal:'15% off', what:'Vitamins & immunity supplements', when:'All month', c:'var(--lime)'},
-  {cat:'GLOGREEN', deal:'Free bag', what:'GLOGREEN reusable bag with bills over Rs. 15,000', when:'Weekends', c:'var(--coral)'}
-];
-
-/* ---------- storage (best effort) ---------- */
-const store = {
-  get(k,f){try{const v=localStorage.getItem(k);return v?JSON.parse(v):f}catch(e){return f}},
-  set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
-};
-let opened = new Set(store.get('gbs.opened',[]));
-let device = store.get('gbs.device',null);
-if(!device){device=Math.random().toString(36).slice(2,6).toUpperCase();store.set('gbs.device',device)}
-
-const hot = window.claude && window.claude.hot;
-let demo = 10;
-
-/* ---------- helpers ---------- */
-const $ = s=>document.querySelector(s);
-const dt = d=>new Date(YEAR,MONTH,d);
-const dow = d=>dt(d).toLocaleDateString('en-GB',{weekday:'short'});
-const longDate = d=>dt(d).toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
-const shortDate = d=>`${dow(d)} ${d} ${MON_SHORT}`;
-const pad = n=>String(n).padStart(2,'0');
-const esc = s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const stateOf = d=>d<demo?'past':d===demo?'today':'future';
-const codeFor = d=>`BS${pad(d)}-${device}-${(((d*7919)+device.charCodeAt(0)*31)%9000+1000)}`;
-
-const GIFT = `<svg class="gift" viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="26" width="48" height="32" rx="4" fill="#1D376C"/><rect x="4" y="18" width="56" height="12" rx="3" fill="#2A4C8F"/><rect x="28" y="18" width="8" height="40" fill="#F7AE2C"/><path d="M32 18c-6-10-18-10-16-2 1 4 10 3 16 2zm0 0c6-10 18-10 16-2-1 4-10 3-16 2z" fill="#EE4B35"/></svg>`;
-const LOCK = `<svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>`;
-
-/* ---------- renderers ---------- */
-
-function renderRing(){
-  const t = DAYS[demo-1], isOpen = opened.has(demo);
-  $('#ringcore').innerHTML = `
-    <span class="k">Today's box</span>
-    <span class="big">${pad(demo)}</span>
-    <span class="date">${longDate(demo)}</span>
-    ${isOpen?`<span class="peekline">${esc(t.big)}<br>${esc(t.sub)}</span>`:''}
-    <button class="btn navy" type="button" data-open="${demo}">${isOpen?'Show my voucher':'Unlock today’s offer'}</button>`;
-}
-
-
-function renderCal(){
-  let h = '';
-  DAYS.forEach(o=>{
-    const s = stateOf(o.d), C = colorOf(o.d);
-    const dim = '';
-    const op = opened.has(o.d) ? ' opened':'';
-    let inner = `<span class="dn">${pad(o.d)}</span><span class="dw">${dow(o.d)}</span>`;
-    let label;
-    if(s==='past'){
-      inner += `<span class="ended">Ended</span><span class="pk">${esc(o.big)}</span><span class="ps">${esc(o.sub)}</span>`;
-      label = `Day ${o.d}, ended. ${o.big} ${o.sub}. View offer and resolution.`;
-    }else if(s==='today'){
-      inner += `<span class="now">Open today</span>${opened.has(o.d)?`<span class="pk">${esc(o.big)}</span><span class="ps">${esc(o.sub)}</span>`:GIFT}`;
-      label = `Day ${o.d}, today. ${opened.has(o.d)?'Show voucher':'Unlock box'}.`;
-    }else{
-      inner += `${LOCK}<span class="foot">Opens ${o.d} ${MON_SHORT}</span>`;
-      label = `Day ${o.d}, locked until ${longDate(o.d)}.`;
-    }
-    h += `<button class="box${dim}${op}" type="button" data-day="${o.d}" data-state="${s}" style="--c:${C}" aria-label="${esc(label)}">${inner}</button>`;
-  });
-  h += `<div class="box brand" aria-hidden="true"><div class="inner"><b>Here's to a better year</b><span>Come back tomorrow for box ${Math.min(demo+1,31)}.</span></div></div>`;
-  $('#cal').innerHTML = h;
-  const n = demo; // boxes available so far
-  $('#barFill').style.width = (n/31*100)+'%';
-  $('#progTxt').textContent = `${n} of 31 boxes open`;
-}
-
-function renderJournal(){
-  const rows = DAYS.filter(o=>o.d<demo || (o.d===demo && opened.has(o.d)));
-  if(!rows.length){$('#journal').innerHTML='<p class="jempty">Unlock today’s box to collect your first Better Resolution.</p>';return}
-  $('#journal').innerHTML = rows.slice().reverse().map(o=>{
-    return `<div class="jrow" style="--c:${colorOf(o.d)}">
-      <div class="d">${pad(o.d)}<small>${dow(o.d)}</small></div>
-      <div><q>${esc(o.res)}</q><span class="ja">${esc(o.act)}</span></div>
-    </div>`}).join('');
-}
-
-function renderOffers(){
-  $('#offers').innerHTML = JAN.map(o=>`<article class="offer" style="--c:${o.c}">
-    <span class="cat">${esc(o.cat)}</span>
-    <span class="deal">${esc(o.deal)}</span>
-    <span class="what">${esc(o.what)}</span>
-    <span class="when">◷ ${esc(o.when)}</span>
-  </article>`).join('');
-}
-
-function barcode(str){
-  let bits=[], x=0;
-  for(const ch of str){const c=ch.charCodeAt(0);for(let i=0;i<6;i++){bits.push(((c>>i)&1)?3:1);bits.push(((c*(i+3))%3)+1)}}
-  let rects='';
-  bits.forEach((w,i)=>{if(i%2===0)rects+=`<rect x="${x}" y="0" width="${w}" height="58" fill="#18213D"/>`;x+=w});
-  return `<svg class="barcode" viewBox="0 0 ${x} 58" preserveAspectRatio="none" aria-label="Voucher barcode">${rects}</svg>`;
-}
-
-function render(){renderRing();renderCal();renderJournal();countdown()}
-
-/* ---------- countdown ---------- */
-function countdown(){
-  const now = new Date();
-  const mid = new Date(now); mid.setHours(24,0,0,0);
-  let s = Math.max(0,Math.floor((mid-now)/1000));
-  const t = `${pad(Math.floor(s/3600))}:${pad(Math.floor(s%3600/60))}:${pad(s%60)}`;
-  $('#count').innerHTML = demo<31
-    ? `Box ${demo+1} unlocks in <b>${t}</b> · ${longDate(demo+1)}`
-    : `Last box of the month. Today's offer ends in <b>${t}</b>`;
-}
-setInterval(countdown,1000);
-
-/* ---------- modal ---------- */
-let lastFocus=null;
-function openModal(d){
-  const o = DAYS[d-1], s = stateOf(d);
-  if(s==='future'){
-    const b = document.querySelector(`.box[data-day="${d}"]`);
-    if(b){b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake')}
-    toast(`Box ${d} opens on ${longDate(d)}. Come back then!`);
-    return;
-  }
-  lastFocus = document.activeElement;
-  const fresh = s==='today' && !opened.has(d);
-  const m = $('#modal');
-  m.innerHTML = `
-    <button class="mx" type="button" aria-label="Close" data-close>×</button>
-    <div class="mtop"><span class="mdate">Day ${d} · ${longDate(d)}</span></div>
-    <h2 id="mTitle" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Day ${d}: ${esc(o.big)} ${esc(o.sub)}</h2>
-    <div class="stage${fresh?'':' open'}" id="stage">
-      <div class="inside"><span class="o1">${esc(o.big)}</span><span class="o2">${esc(o.sub)}</span></div>
-      <div class="door l"><span class="num">${pad(d)}</span><span class="knob"></span></div>
-      <div class="door r"><span class="num">${pad(d)}</span><span class="knob"></span></div>
-      <button class="tapcue" type="button" id="tap">Tap to open box ${d}</button>
+  <main id="offers" class="wrap main" tabindex="-1">
+    <div class="notice" id="notice" hidden></div>
+    <div id="sections" aria-live="off">
+      <noscript><p class="empty">Live offers need JavaScript switched on. You can still browse the categories below, or call the Sampath Bank 24 hour hotline on 011 2 303050.</p></noscript>
     </div>
-    <div class="mbody${fresh?' hide':''}" id="mbody">
-      <div class="reveal">
-        <div class="rlabel">Today's Better Resolution</div>
-        <p class="rtext">${esc(o.res)}</p>
-        <div class="act"><span>Try this ${s==='today'?'today':'this week'}</span>${esc(o.act)}</div>
-        ${s==='today'?`
-        <div class="voucher">
-          <div class="vrow"><span class="k">Voucher code</span><span class="vstatus"><i></i>Valid today</span></div>
-          <div class="code">${codeFor(d)}</div>
-          ${barcode(codeFor(d))}
-          <div class="vfine">Show this screen at any Glomark counter on <b>${longDate(d)} ${YEAR}</b> to collect <b>${esc(o.big)} ${esc(o.sub.replace(/^FREE /,'free '))}</b>. Valid until store closing. One redemption per customer.</div>
-        </div>`:`
-        <div class="endedbox">This offer ended on <b>${longDate(d)}</b>. The resolution is yours to keep. Today's box is <b>Day ${demo}</b>.</div>`}
-        <div class="mact">
-          ${s==='today'?`<button class="btn navy" type="button" data-close>Done</button>`:`<button class="btn navy" type="button" data-open="${demo}">Go to today's box</button>`}
-        </div>
+  </main>
+
+  <!-- ABOUT + FAQ: plain text that search engines can read without running the page's code -->
+  <section class="about" aria-labelledby="aboutTitle">
+    <div class="wrap about__in">
+      <div class="about__copy">
+        <h2 class="about__title" id="aboutTitle">Sampath Bank card offers, all in one place</h2>
+        <p>Find every current Sampath Bank credit and debit card offer in Sri Lanka: restaurant and hotel dining, supermarkets, fashion and footwear, jewellery, eyewear, baby and kids, sports, home care, auto care, travel, online shopping, and 0% instalment and extended settlement plans.</p>
+        <p>Each offer shows what you save on each card, when it starts and ends, and where to use it, with a live countdown, Google Maps directions and a one-tap calendar reminder.</p>
+        <ul class="about__cats" aria-label="Offer categories">
+          <li><a href="../../fashion-retail/" data-cat="Fashion &amp; Retail">Fashion &amp; Retail</a></li>
+          <li><a href="../../gifts-wellness-watches/" data-cat="Gifts, Wellness &amp; Watches">Gifts, Wellness &amp; Watches</a></li>
+          <li><a href="../../footwear/" data-cat="Footwear">Footwear</a></li>
+          <li><a href="../../online/" data-cat="Online">Online</a></li>
+          <li><a href="../../eyewear-hearing/" data-cat="Eyewear &amp; Hearing">Eyewear &amp; Hearing</a></li>
+          <li><a href="../../baby-kids/" data-cat="Baby &amp; Kids">Baby &amp; Kids</a></li>
+          <li><a href="../../home-care/" data-cat="Home Care">Home Care</a></li>
+          <li><a href="../../auto-care/" data-cat="Auto Care">Auto Care</a></li>
+          <li><a href="../../travel-leisure/" data-cat="Travel &amp; Leisure">Travel &amp; Leisure</a></li>
+          <li><a href="../../sports/" data-cat="Sports">Sports</a></li>
+          <li><a href="../../supermarkets/" data-cat="Supermarkets">Supermarkets</a></li>
+          <li><a href="../../jewellery/" data-cat="Jewellery">Jewellery</a></li>
+          <li><a href="../../dining/" data-cat="Dining">Dining</a></li>
+          <li><a href="../../instalment-plans/" data-cat="0% Instalment Plans">0% Instalment Plans</a></li>
+          <li><a href="../../extended-settlement-plans/" data-cat="Extended Settlement Plans">Extended Settlement Plans</a></li>
+        </ul>
       </div>
-    </div>`;
-  $('#scrim').classList.add('on');
-  $('#scrim').setAttribute('aria-hidden','false');
-  document.body.style.overflow='hidden';
-  (fresh?$('#tap'):m.querySelector('.mx')).focus();
-  if(fresh){
-    const go=()=>{unlock(d)};
-    $('#tap').addEventListener('click',go);
-    m.querySelectorAll('.door').forEach(x=>x.addEventListener('click',go));
-  }
-}
-function unlock(d){
-  const st=$('#stage'); if(!st||st.classList.contains('open'))return;
-  st.classList.add('open');
-  $('#mbody').classList.remove('hide');
-  opened.add(d); store.set('gbs.opened',[...opened]);
-  confetti();
-  setTimeout(()=>{const c=$('#modal .mact .btn');if(c)c.focus()},900);
-  renderRing();renderCal();renderJournal();
-}
-function closeModal(){
-  $('#scrim').classList.remove('on');
-  $('#scrim').setAttribute('aria-hidden','true');
-  document.body.style.overflow='';
-  if(lastFocus&&document.contains(lastFocus))lastFocus.focus();
-}
+      <div class="about__faq">
+        <h2 class="about__title about__title--sm">Questions</h2>
+        <details><summary>Which Sampath cards can I use?</summary><p>Each offer shows whether it is for Sampath credit cards, debit cards or both, and the discount on each.</p></details>
+        <details><summary>How do I remember an offer?</summary><p>Tap the calendar button on any offer to add it to Google Calendar, Apple Calendar or Outlook, with a reminder the day before and on the morning.</p></details>
+        <details><summary>What time zone are the offer times in?</summary><p>All dates, times and countdowns are in Sri Lanka time.</p></details>
+        <details><summary>Where can I get help with an offer?</summary><p>Conditions apply to every offer. For details, call the Sampath Bank 24 hour hotline on <a href="tel:+94112303050">011 2 303050</a>.</p></details>
+      </div>
+    </div>
+  </section>
 
-/* ---------- toast ---------- */
-let tt;
-function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),2600)}
+  <!-- FOOTER: orange line, corporate details left, logo bottom-right -->
+  <footer class="foot">
+    <div class="wrap">
+      <p class="foot__cond">Conditions apply. All times shown in Sri Lanka time. <a href="#" id="cookieSettings">Cookie settings</a></p>
+    </div>
+    <div class="foot__line"></div>
+    <div class="wrap foot__in">
+      <div class="foot__left">
+        <p class="foot__contact" id="fContact"></p>
+        <p class="foot__web"><span class="foot__social" id="fSocial"></span><a id="fWeb" href="#"></a></p>
+        <p class="foot__fitch" id="fFitch"></p>
+      </div>
+      <img class="foot__logo" src="../../assets/img/sampath-logo.png" alt="Sampath Bank" width="873" height="188" loading="lazy" decoding="async">
+    </div>
+  </footer>
 
-/* ---------- confetti ---------- */
-function confetti(){
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  const cv=$('#confetti'),ctx=cv.getContext('2d');
-  const W=cv.width=innerWidth,H=cv.height=innerHeight;
-  const cols=['#8DC63F','#F7AE2C','#EE4B35','#C61D7E','#6E3C9A','#1E8BCB'];
-  const ps=Array.from({length:150},()=>({x:W/2+(Math.random()-.5)*120,y:H/2-60,vx:(Math.random()-.5)*14,vy:-Math.random()*13-4,s:Math.random()*7+4,r:Math.random()*6,vr:(Math.random()-.5)*.3,c:cols[Math.random()*6|0],ring:Math.random()<.3}));
-  let f=0;
-  (function tick(){
-    ctx.clearRect(0,0,W,H);
-    ps.forEach(p=>{p.vy+=.38;p.vx*=.985;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;
-      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);
-      if(p.ring){ctx.strokeStyle=p.c;ctx.lineWidth=2.5;ctx.beginPath();ctx.arc(0,0,p.s/1.6,0,7);ctx.stroke()}
-      else{ctx.fillStyle=p.c;ctx.fillRect(-p.s/2,-p.s/4,p.s,p.s/2)}
-      ctx.restore()});
-    if(++f<150)requestAnimationFrame(tick);else ctx.clearRect(0,0,W,H);
-  })();
-}
+  <!-- OFFER DETAIL -->
+  <dialog class="modal" id="modal" aria-labelledby="modalTitle">
+    <button class="modal__x" data-close aria-label="Close offer details">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <div id="modalBody"></div>
+  </dialog>
 
-/* ---------- events ---------- */
-document.addEventListener('click',e=>{
-  const el=e.target.closest('[data-open],[data-day],[data-close]');
-  if(!el)return;
-  if(el.dataset.close!==undefined){closeModal();return}
-  if(el.dataset.open){if($('#scrim').classList.contains('on'))closeModal();openModal(+el.dataset.open);return}
-  if(el.dataset.day){openModal(+el.dataset.day)}
-});
-$('#heroOpen').addEventListener('click',()=>openModal(demo));
-$('#scrim').addEventListener('click',e=>{if(e.target.id==='scrim')closeModal()});
-document.addEventListener('keydown',e=>{
-  if(!$('#scrim').classList.contains('on'))return;
-  if(e.key==='Escape')closeModal();
-  if(e.key==='Tab'){
-    const f=[...$('#modal').querySelectorAll('button')].filter(b=>b.offsetParent);
-    if(!f.length)return;
-    if(e.shiftKey&&document.activeElement===f[0]){e.preventDefault();f[f.length-1].focus()}
-    else if(!e.shiftKey&&document.activeElement===f[f.length-1]){e.preventDefault();f[0].focus()}
-  }
-});
+  <!-- SHARE -->
+  <dialog class="sharedlg" id="shareDlg" aria-labelledby="shareTitle">
+    <button class="modal__x" data-share-close aria-label="Close sharing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <p class="sharedlg__t" id="shareTitle">Share this offer</p>
+    <div class="sharedlg__o" id="shareWhat"></div>
+    <div id="shareBtns"></div>
+  </dialog>
 
-/* ---------- boot ---------- */
-function start(data){
-  renderOffers();render();
-}
-hot&&hot.ready?hot.ready(start):start((hot&&hot.data)||{});
-})();
-</script>
+  <dialog class="sharedlg" id="calDlg" aria-labelledby="calTitle">
+    <button class="modal__x" data-cal-close aria-label="Close add to calendar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <p class="sharedlg__t" id="calTitle">Add to calendar</p>
+    <div class="sharedlg__o" id="calWhat"></div>
+    <div id="calBtns"></div>
+  </dialog>
+
+  <!-- DEMO CONTROLS (only visible when Demo Mode is ON; press D to hide) -->
+  <div class="demo" id="demo" hidden>
+    <div class="demo__panel" id="demoPanel" hidden>
+      <p class="demo__t">Demo timeline <span id="demoTime">00:00</span></p>
+      <div class="demo__track"><div class="demo__bar" id="demoBar"></div></div>
+      <div class="demo__row">
+        <button class="dbtn" id="demoPause">Pause</button>
+        <button class="dbtn" id="demoRestart">Restart</button>
+      </div>
+      <div class="demo__row" role="group" aria-label="Demo speed">
+        <button class="dbtn" data-speed="1" aria-pressed="true">1×</button>
+        <button class="dbtn" data-speed="2" aria-pressed="false">2×</button>
+        <button class="dbtn" data-speed="5" aria-pressed="false">5×</button>
+      </div>
+      <p class="demo__hint">Press <kbd>D</kbd> to hide this button</p>
+    </div>
+    <button class="demo__btn" id="demoToggle" aria-expanded="false" aria-controls="demoPanel">Demo</button>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <div class="drop" id="dropOverlay" hidden><p>Drop your offers Excel to preview it</p></div>
+
+  <!-- Scripts: settings first, then the Excel reader, the engine and the page -->
+  <script src="../../settings.js?v=20261112"></script>
+  <script src="../../pages.js?v=20261112"></script>
+  <script src="../../assets/js/analytics.js?v=20261112"></script>
+  <script src="../../assets/js/vendor/xlsx.mini.min.js?v=20261112"></script>
+  <script src="../../assets/js/offer-engine.js?v=20261112"></script>
+  <script src="../../assets/js/app.js?v=20261112"></script>
 </body>
 </html>
