@@ -661,3 +661,8 @@ body.share-open .demo { display: none; }
   .cats--top .cat { flex-basis: 156px; padding: 10px 12px; }
   .cats--top .cat__name { font-size: 12.5px; }
 }
+/* phones: stats sit below the photo, not over it */
+@media (max-width: 760px) {
+  .hero__art { margin: 12px -16px 0; }
+  .hero__meta { margin-top: 0; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.35); position: relative; z-index: 2; }
+}
