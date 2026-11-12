@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.YOUR-DOMAIN.com/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image><image:loc>https://www.YOUR-DOMAIN.com/assets/og-image.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.YOUR-DOMAIN.com/assets/church-kiss.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.YOUR-DOMAIN.com/assets/harshali-sunset.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.YOUR-DOMAIN.com/assets/beach-vows.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.YOUR-DOMAIN.com/assets/unconditional-love.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.YOUR-DOMAIN.com/assets/devni-max.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.YOUR-DOMAIN.com/assets/beach-mandap.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.YOUR-DOMAIN.com/assets/mother-daughter.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.YOUR-DOMAIN.com/assets/fareeda-1.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.YOUR-DOMAIN.com/assets/fareeda-2.jpg</image:loc></image:image>
+  </url>
+</urlset>
